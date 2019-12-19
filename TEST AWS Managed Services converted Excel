@@ -1,0 +1,2082 @@
+{
+    "MSP Service List": [
+        {
+            "Service": "Bronze Service - A Single Managed Service"
+        },
+        {
+            "Service": "Cost Model",
+            "undefined": "Reselling cost model (AWS Spend pass through), with cost recovery realized single digit % over Unisys AWS spend (shared from discount with the customer)"
+        },
+        {
+            "Service": "Description",
+            "undefined": "Unisys AWS Managed Service Discount level service is an extremly light touch managed service providing basic AWS Account setup, Billing monitoring, metering and invoicing, sharing the partner discounts with the customer"
+        },
+        {
+            "Service": "Account Setup Service (AWSMSP-13)"
+        },
+        {
+            "undefined": "B.1.1",
+            "Service": "AWS Account Setup (AWSMSP-14)",
+            "High Level Description": "Unisys AWS Managed Services team will collect a base set of account characteristics from the customer.  The team will then initiate an Discount Account creation request where an automation script will be executed, creating the AWS account, attaching this account to the Unisys master account, configuring based user and IAM policy and then authoring notification emails to be sent to the customer.  The AWS Managed service team will review automated account, confirm completion and initiate the release of the account creation notification to the customer.",
+            "What will be built": "1. Unisys AWS MSP Master Account  \r\n2. List of base characteristics required to collect from the customer  \r\n3.  Automated collection mechanism for the collection of these characteristics (web form)  \r\n5.  Automation script to create the AWS Account, link to master, configure AWS Organizations, notify ITSM of completion  \r\n6.  Notification email template for account creation notification",
+            "3rd Party Tools Requirement": "1. AWS API/CLI - Automated Script\r\n2. AWS S3 / SNS\r\n3. Fugue",
+            "MSP Checklist Reference": "5.2 - AWS Account Settings (AWSMSP-128)\r\n5.4 - Reseller Partner Account Management Capabilities (AWSMSP-130)\r\n5.6 - Reseller Account Controls (AWSMSP-131)\r\n8.1.5 - Security Management (AWSMSP-142)\r\n8.1.8 - Security Management (AWSMSP-145)\r\n8.2.4 - Security Event Logging and Retention (AWSMSP-151)\r\n8.3 - Access Management / AWS API Credential Strategy  (AWSMSP-152)"
+        },
+        {
+            "High Level Description": "Deliverables:  AWS Account, With AWS Consolidated Billing, AWS Organizations and Base IAM configuration and policy configured"
+        },
+        {
+            "High Level Description": "Estimate: Build:  40 hours, Setup Per Customer: 1 hour"
+        },
+        {
+            "Service": "Basic Billing, Metering and Invoicing Service (AWSMSP-15)"
+        },
+        {
+            "undefined": "B.2.1",
+            "Service": "Basic Billing (AWSMSP-16)",
+            "High Level Description": "As part of the Bronze service, the AWS Managed Services team will configure the customer's AWS account to enable them to access the AWS Billing Dashboard where customers can view their current AWS spend, generate reports and have visibility of detail usage and billing data.  The AWS Managed Service team will also configure the customer account budget and configure alerts and notifications based on this budget and actual spending.\r\n",
+            "What will be built": "1.  Create automation script to configure AWS accounts, and allow configuration based on customer requirements\r\n2.  Get required CloudHealth/CloudCheckr Training\r\n2.  Configure the AWS account to enable billing data to be visible by other then root access\r\n3.  Create IAM policy for Billing data access  \r\n4.  Create user group and apply the billing policy\r\n5.  Create training document explaining how to use the Billing Dashboard to customers\r\n6.  Gather Budget requirements and configure AWS Budgets for this customer in the billing dashboard\r\n7.  Set up alerts and notifications per the customer requirements",
+            "3rd Party Tools Requirement": "1. AWS IAM, IAM Policy\r\n2. CloudHealth",
+            "MSP Checklist Reference": "5.1 - AWS Billing and Cost Management Console (AWSMSP-127)\r\n5.3 - Third Party Billing Solutions (AWSMSP-129)\r\n5.5 - Reseller Partner Rebilling Capabilities (AWSMSP-132)\r\n8.1.10 - Security Management (AWSMSP-147)"
+        },
+        {
+            "High Level Description": "Deliverables:  Access to AWS Billing Dashboard, AWS Budget Configured, Budget Threshold Crossing Alerts"
+        },
+        {
+            "High Level Description": "Estimate: Build:  120 hours, Setup Per Customer: .5 Hours, Per Month Per Customer:  1 Hour"
+        },
+        {
+            "undefined": "B.2.2",
+            "Service": "Basic Metering (AWSMSP-17)",
+            "High Level Description": "As part of the Bronze service, the AWS Managed Services team will configure the customer's AWS account to meter AWS service usage, track against an agreed upon budget, report on this usage monthly or on demand.  Thresholds will be configured and corresponding notifications per agreement with the customer.",
+            "What will be built": "1.  Create automation script to configure AWS account with the metrics collection, threshold and notifications per the customer requirements.  The metrics collected should be from a set that comes free from AWS.  We should cap the number of alerts per customer and cap the number of notifications, allowing the addition of more for a fee per.\r\n2.  Template the monthly report and the collection of the respective data for the report.\r\n3.  Template the email notification the sends the monthly report.",
+            "3rd Party Tools Requirement": "1. AWS CloudWatch, AWS CloudTrail, SNS, SQS, SWF\r\n2. CloudHealth",
+            "MSP Checklist Reference": "5.1 - AWS Billing and Cost Management Console (AWSMSP-127)\r\n5.3 - Third Party Billing Solutions (AWSMSP-129)\r\n5.5 - Reseller Partner Rebilling Capabilities (AWSMSP-132)\r\n8.1.10 - Security Management (AWSMSP-147)"
+        },
+        {
+            "High Level Description": "Deliverables:  Monthly Usage Report, Threshold Crossing Event Alerts"
+        },
+        {
+            "High Level Description": "Estimate: Build:  24 hours, Setup Per Customer: 1 Hour, Per Month Per Customer:  1 Hour"
+        },
+        {
+            "undefined": "B.2.3",
+            "Service": "Basic Invoicing (AWSMSP-18)",
+            "High Level Description": "As part of the Bronze service, the AWS Managed Services team will collect invoice method of choice (we dictate the choices with very minor variation).  We use the parameters and an automated script to configure monthly invoice generation utility.  Monthly utility generates the invoice and then queues the invoices for review by AWS Managed Services team for quality control and once ok'd",
+            "What will be built": "1.  Generate invoice requirement / choice checklist\r\n2.  Generate automation script to conigure the AWS billing data collection, processing and invoice generation per the customer requirements / choice selection\r\n3.  Generate Email template for delivery of invoice\r\n4.  Generate Queue and Workflow for the approval process of each of the customer's invoices",
+            "3rd Party Tools Requirement": "1.  AWS Billing, AWS AWF, AWS SQS, AWS SNS\r\n2.  CloudHealth\r\n3.  Custom Billing/Invoice script/generation utility",
+            "MSP Checklist Reference": "5.1 - AWS Billing and Cost Management Console (AWSMSP-127)\r\n5.3 - Third Party Billing Solutions (AWSMSP-129)\r\n5.5 - Reseller Partner Rebilling Capabilities (AWSMSP-132)\r\n8.1.10 - Security Management (AWSMSP-147)"
+        },
+        {
+            "High Level Description": "Deliverables:  Monthly Managed Service Invoice"
+        },
+        {
+            "High Level Description": "Estimate: Build:  40 hours, Setup Per Customer: .5 Hours, Per Month Per Customer:  1 Hour (Depending on approval workflow)"
+        },
+        {
+            "Service": "Shared Partner and Tiered Discounts Service (AWSMSP-19)"
+        },
+        {
+            "undefined": "B.3.1",
+            "Service": "Shared Partner Discounts (AWSMSP-20)",
+            "High Level Description": "As part of the Bronze service, Accounts under the Unisys Federal Master account receive a 7% discount for all services, a 35% discount on business level support.  These discounts can be shared with the customer based on the pricing model of the Bronze Service.  Per month, this savings will be shared with the customer in the form of a monthly AWS savings statement.",
+            "What will be built": "1.  Determine the % of discount to share with customer (can potentially vary per customer should we choose)\r\n2.  Generate automation script to collect savings data from AWS billing data / shared credits\r\n3.  Generate monthly savings statement template\r\n4.  Generate monthly savings statement email template",
+            "3rd Party Tools Requirement": "1.  AWS Billing, SNS, SQS, SWF\r\n2.  CloudHealth\r\n3.  Custom Billing/Invoice script/generation utility",
+            "MSP Checklist Reference": "5.3 - Third Party Billing Solutions (AWSMSP-129)\r\n5.5 - Reseller Partner Rebilling Capabilities (AWSMSP-132)"
+        },
+        {
+            "High Level Description": "Deliverables:  Monthly savings statement"
+        },
+        {
+            "High Level Description": "Estimate: Build: 40 hours, Setup Per Customer: .5 Hours, Per Month Per Customer:  .5 Hours"
+        },
+        {
+            "undefined": "B.3.2",
+            "Service": "Shared Tiered Discounts (AWSMSP-21)",
+            "High Level Description": "As part of the Bronze service, Accounts under the Unisys Federal Master account receive a tiered usage  discount for all services.  These discounts can be proportioned and shared with the customer based on the pricing model of the Bronze Service.  Per month, this savings will be shared with the customer in the form of a monthly AWS savings statement.",
+            "What will be built": "1.  Determine the % of tiered usage discount to share with customer (can potentially vary per customer should we choose)\r\n2.  Generate automation script to collect savings data from AWS billing data / shared credits",
+            "3rd Party Tools Requirement": "1.  AWS Billing, SNS, SQS, SWF\r\n2.  CloudHealth\r\n3.  Custom Billing/Invoice script/generation utility",
+            "MSP Checklist Reference": "5.3 - Third Party Billing Solutions (AWSMSP-129)\r\n5.5 - Reseller Partner Rebilling Capabilities (AWSMSP-132)"
+        },
+        {
+            "High Level Description": "Deliverables:  Monthly savings statement"
+        },
+        {
+            "High Level Description": "Estimate: Build:  10 hours, Setup Per Customer: 0 Hours, Per Month Per Customer:  0 Hours (Included in Shared Partner Discounts)"
+        },
+        {
+            "Service": "Silver Service - A Single Managed Service"
+        },
+        {
+            "Service": "Cost Model",
+            "undefined": "Managed service cost model (Per VM or % or spend TBD), as low a margin as we can get to, not trying to make lots of money with the managed service"
+        },
+        {
+            "Service": "Description",
+            "undefined": "Unisys AWS Managed Service Core level service is a fully managed service that includes the Core set of services required to manage the customer.  These services are not a la carte, all are included  and covered in the cost."
+        },
+        {
+            "undefined": "0",
+            "Service": "Service",
+            "High Level Description": "High Level Description",
+            "What will be built": "What will be built",
+            "3rd Party Tools Requirement": "3rd Party Tools Requirement"
+        },
+        {
+            "Service": "AWS Environment Setup Service (AWSMSP-22)"
+        },
+        {
+            "undefined": "S.1.1",
+            "Service": "Customer Configuration Workshop (AWSMSP-23)",
+            "High Level Description": "Upon a signed managed service agreement (MSA), The Unisys AWS Managed Service team will send the Customer  Requirements Selection (CRS) document 3-5 days prior to workshop.  Conduct a 2 hour workshop with the customer to go over the checklist, confirm their managed account selections/configurations and set expectations for the managed services engagement.  Introduce the customer to their named Technical Account Manager (TAM).  This output of this meeting will be used as input to the automated account setup script, configured by the TAM.",
+            "What will be built": "1.  Generate an official Managed Services Agreement (MSA) to be signed by each customer\r\n2.  Generate the CRS document, assuring that the selections correspond to the variables configured in the environment creation automation script.\r\n3.  Prepare the Customer Configuration Workshop slide deck, covering the sections of the CRS.\r\n4.  Create the Technical Account Manager CONOPs, role definition and make sure the role definition is included in the MSA.\r\n5.  Output of the completed CRS document will result in a Unisys AWS Managed Services Statement of Work (SOW) that will be signed by both Unisys and the customer.",
+            "3rd Party Tools Requirement": "1.  No tools required",
+            "MSP Checklist Reference": "N/A"
+        },
+        {
+            "High Level Description": "Deliverables:  Signed Managed Services Agreement, Completed CRS, Signed Unisys AWS Managed Service SOW"
+        },
+        {
+            "High Level Description": "Estimate: Build:  120 hours, Setup Per Customer: 16 Hours, Per Month Per Customer:  0 Hours (Included in Shared Partner Discounts)"
+        },
+        {
+            "undefined": "S.1.2",
+            "Service": "Customer AWS Environment Setup (AWSMSP-24)",
+            "High Level Description": "Once output of the MSA, CRS and SOW are all completed and signed, respectively.  The TAM will configure the customer AWS Environment Setup automation script.  The TAM will execute the environment setup script, per procedure which will automatically apply the Managed Services Configurations per the CRS.",
+            "What will be built": "1.  Generate the automation script that will automatically configure the customer AWS Environment per the CRS.\r\n2.  Generate the TAM procedures for configuration of the automation script\r\n3.  Generate automated validation utility that will assure the Automation script configurations are set properly per the CRS.",
+            "3rd Party Tools Requirement": "1.  AWS CloudFormation",
+            "MSP Checklist Reference": "N/A"
+        },
+        {
+            "High Level Description": "Deliverables:  AWS Configured Environment"
+        },
+        {
+            "High Level Description": "Estimate: Build:  60 hours, Setup Per Customer: 4-8 Hours, Per Month Per Customer:  0 Hours"
+        },
+        {
+            "undefined": "S.1.3",
+            "Service": "Customer Dashboard (AWSMSP-25)",
+            "What will be built": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "3rd Party Tools Requirement": "1.  TBD\r\n2.  TBD\r\n3.  TBD",
+            "MSP Checklist Reference": "12.x - Service Reporting"
+        },
+        {
+            "High Level Description": "Deliverables:  Configured Customer Dashboard"
+        },
+        {
+            "High Level Description": "Estimate: Build:  "
+        },
+        {
+            "Service": "Cloud Services Catalog Service (AWSMSP-26)"
+        },
+        {
+            "undefined": "S.2.1",
+            "Service": "Customer AWS Service Catalog (AWSMSP-27)",
+            "High Level Description": "Our AWS Managed Service customers will be able to configure an AWS Service Catalog that the user community can use to provision AWS services without the need of the AWS console.  This catalog will be configured to the CRS.  NOTE:  This service is not available in AWS GovCloud.  If customer will let us, we can have the AWS Service Catalog in commercial regions provisioning to GovCloud (Need to test the viability of this approach)",
+            "What will be built": "1.  CRS Selection criteria (how customers can define their catalog)\r\n2.  If this can be scripted, cloudformation template or automation script to setup the customer catalog\r\n3.  IAM Policyand Role that restricts access to this catalog\r\n4.  If skinning is required, procedures for skinning the customer catalog (need to set limits to this cusomization)\r\n5.  Monitoring metrics of this service, notification messages to Managed Service Operations\r\n6.  Operational procedures for this service",
+            "3rd Party Tools Requirement": "1.  AWS Service Catalog (Provisioning to Commercial and GovCloud)\r\nPer-Use: CloudFormation Template Creation",
+            "MSP Checklist Reference": "N/A"
+        },
+        {
+            "High Level Description": "Deliverables:  Operational AWS Service Catalog"
+        },
+        {
+            "High Level Description": "Estimate: Build:  80 hours, Setup Per Customer: 1 Hour, Per Month Per Customer:  2 Hours"
+        },
+        {
+            "Service": "Basic Workload Management Service (AWSMSP-28)"
+        },
+        {
+            "undefined": "S.3.1",
+            "Service": "Basic Workload OS Patching Service (AWSMSP-29)",
+            "High Level Description": "As part of our Core AWS Managed Service, the Basic Workload OS Patching service will enable our AWS Managed Service team to keep the customers workloads patched with the latest operating system updates.  The team will use AWS EC2 System Manager: Patch Manager for windows workloads and will managed Linux based workloads with a collection of commands executed via the AWS EC2 System Manager: Run Command.",
+            "What will be built": "1.  CRS Selection criteria (how customers can select the OS patching services options)\r\n2.  Develop AMI and Patching Repository\r\n3.  Develop OS Patching CONOPs\r\n4.  Develop OS Patching Communications plan per CRS\r\n5.  Develop Monthly Workload Management Report Template\r\n6.  Create report email notification template",
+            "3rd Party Tools Requirement": "1.  AWS EC2 Systems Manager\r\n",
+            "MSP Checklist Reference": "8.1.2 - Security Management\r\n9.5 - Proactive Monitoring and Alerting\r\n9.6 - Next Generation Monitoring Capabilities\r\n10.2 Worload or Solution - Specific SLAs"
+        },
+        {
+            "High Level Description": "Deliverables:  OS Patched Workloads, Monthly Patching Log"
+        },
+        {
+            "High Level Description": "Estimate: Build:  120 hours, Setup Per Customer: 1 Hours, Per Month Per Customer:  4 Hours"
+        },
+        {
+            "undefined": "S.3.2",
+            "Service": "Basic Workload Application Patching Service (AWSMSP-30)",
+            "High Level Description": "By using AWS EC2 System Manager: Inventory Manager, the AWS Managed Services team can keep track of all the software that is running on each instance under management.  When software patches become available for managed applications, the AWS Managed services team will work with the application team to schedule an application patch roll-out using the AWS EC2 System Manager: Run Command",
+            "What will be built": "1.  CRS Selection criteria (how customers can select the App patching services options)\r\n2.  Develop an Application Patch Repository\r\n3.  Develop OS Patching CONOPs\r\n4.  Develop OS Patching Communications plan per CRS\r\n5.  Develop Monthly Workload Management Report Template\r\n6.  Create report email notification template",
+            "3rd Party Tools Requirement": "1.  AWS EC2 Systems Manager",
+            "MSP Checklist Reference": "8.1.2 - Security Management\r\n9.5 - Proactive Monitoring and Alerting\r\n9.6 - Next Generation Monitoring Capabilities\r\n10.2 Worload or Solution - Specific SLAs"
+        },
+        {
+            "High Level Description": "Deliverables:  Application Patched Workloads, Monthly Patching Log"
+        },
+        {
+            "High Level Description": "Estimate: Build:  40 hours, Setup Per Customer: 1 Hours, Per Month Per Customer:  4 Hours"
+        },
+        {
+            "Service": "Workload Backup and Recovery Service (AWSMSP-31)"
+        },
+        {
+            "undefined": "S.4.1",
+            "Service": "EBS Volume Backup Service (AWSMSP-32)",
+            "High Level Description": "Most AWS EC2 have attached EBS Volumes which contain both OS files and application related data.  As part of the CRS, the customer AWS Environment will be configured with Volume backup automation that is applied using AWS Tags and AWS Lambda automation.  Based on the tagging tier, a scheduling services will trigger automated snapshots of the EBS volumes, frequency driven by the tagging tier.  ",
+            "What will be built": "1.  CRS Selection criteria (how customers can select the EBS Volume Storage Tier Options services options)\r\n2.  Develop Tiering tagging strategy and Cloudwatch actions when EBS volumes with the respective tags are created to automatically configure backup with Lambda\r\n3.  Create Monthly Backup Status Report Template\r\n4.  Create report email notification template",
+            "3rd Party Tools Requirement": "1.  AWS Lambda\r\n2.  Fugue / CloudFormation / CLI / API",
+            "MSP Checklist Reference": "N/A"
+        },
+        {
+            "High Level Description": "Deliverables:  Tiered EBS Volume Storage Definition, Monthly Backup Status Report"
+        },
+        {
+            "High Level Description": "Estimate: Build:  60 hours, Setup Per Customer: 1 Hour, Per Month Per Customer:  .25 Hours"
+        },
+        {
+            "undefined": "S.4.2",
+            "Service": "EBS Volume Restoration Service (AWSMSP-33)",
+            "High Level Description": "The EBS volumes that have the EBS Volume Backup service will be automatically configured with a restoration script that can 1. attached the restored volume to the same EC2 instance.  2. stand up a like EC2 instance and attach the EBS volume.  NEED TO SET LIMITS to this service, and have a Per Use charge once limit reached",
+            "What will be built": "1.  Develop restoration automation scripts to restore EBS Volume.\r\n2.  Create Service Catalog item that allows customers to restore the objects\r\n3.  Create procedures for TAM to restore the bucket or object with instructions on how to configure and run automation restoration script",
+            "3rd Party Tools Requirement": "1.  AWS Lambda\r\n2.  CloudHealth\r\n3.  Fugue",
+            "MSP Checklist Reference": "13.2 - Automation Optimization Process"
+        },
+        {
+            "High Level Description": "Deliverables:  Restored EBS Volume, Monthly Restoration Log, Monthly EBS Volume Restoration Surge Billing Line Item"
+        },
+        {
+            "High Level Description": "Estimate: Build:  40 hours, Setup Per Customer: 0 Hours, Per Month Per Customer:  .5 Hours"
+        },
+        {
+            "undefined": "S.4.3",
+            "Service": "AWS S3 Bucket/Object Backup (AWSMSP-34)",
+            "High Level Description": "Since S3 comes with inherit high durability (11 nines) and various options for durability and management, based on the CRS Selection, we can configure S3 object backup tiers (using AWS tagging to indicate tier) and AWS Lambda to automatically configure the bucket to each tier.  This will automatically configure the bucket and objects within to the proper backup plan within S3",
+            "What will be built": "1.  CRS Selection criteria (how customers can select the S3 Volume Storage Tier Options services options)\r\n2.  Develop Tiering tagging strategy and Cloudwatch actions when S3 buckets with the respective tags are created to automatically configure backup with Lambda\r\n3.  Data included in Monthly Backup Status Report",
+            "3rd Party Tools Requirement": "1.  AWS Lambda\r\n2.  CloudHealth\r\n3.  Fugue",
+            "MSP Checklist Reference": "N/A"
+        },
+        {
+            "High Level Description": "Deliverables:  Tiered S3 Volume Storage Definition, Monthly Backup Status Report"
+        },
+        {
+            "High Level Description": "Estimate: Build:  20 hours, Setup Per Customer: 1 Hour, Per Month Per Customer:  .25 Hours"
+        },
+        {
+            "undefined": "S.4.4",
+            "Service": "AWS S3 Bucket/Object Restoration (AWSMSP-35)",
+            "High Level Description": "For those S3 buckets and objects that need backup, we will enable S3 Versioning which creates and automatic backup of each S3 objects.  ( we can certainly look for cheaper ways to do this, but answer currently)",
+            "What will be built": "1.  Develop restoration automation scripts to restore bucket/object.\r\n2.  Create Service Catalog item that allows customers to restore the objects\r\n3.  Create procedures for TAM to restore the bucket or object with instructions on how to configure and run automation restoration script",
+            "3rd Party Tools Requirement": "1.  AWS Lambda\r\n2.  CloudHealth\r\n3.  Fugue",
+            "MSP Checklist Reference": "13.2 - Automation Optimization Process"
+        },
+        {
+            "High Level Description": "Deliverables:  Tiered S3 Volume Storage Definition, Monthly Backup Status Report"
+        },
+        {
+            "High Level Description": "Estimate: Build:  20 hours, Setup Per Customer: 0 Hours, Per Month Per Customer:  .5 Hours"
+        },
+        {
+            "Service": "Log Aggregation Repository Service (AWSMSP-36)"
+        },
+        {
+            "undefined": "S.5.1",
+            "Service": "Central Logging Repository (AWSMSP-37)",
+            "High Level Description": "Automates the creation of a central logging repository, automatically configures AWS CloudWatch Logs on the repository and enables the creation of alerts and notifications against this logging repository.  SERVICE LIMIT the number of log integrations, enable self service",
+            "What will be built": "1.  CRS Selection criteria (how customers can select the configuration of their AWS Environment Log Aggregtion)\r\n2.  Create automation script to for the configuration of the Log Aggregation repo.\r\n3.  Create TAM procedures to configure new customer log integrations\r\n",
+            "3rd Party Tools Requirement": "1.  AWS CloudWatch Logs, S3",
+            "MSP Checklist Reference": "8.2.1 - Security Event Logging and Retention\r\n8.2.2 - Security Event Logging and Retention\r\n9.6 - Next Generation Monitoring Capabilities\r\n9.8.2 - Continuous Compliance"
+        },
+        {
+            "High Level Description": "Deliverables:  Log Aggregation Repository, Log Summary Monthly Report"
+        },
+        {
+            "High Level Description": "Estimate: Build:  40 hours, Setup Per Customer: .5 Hours, Per Month Per Customer:  .5 Hours"
+        },
+        {
+            "Service": "Network & Security Monitoring Service (AWSMSP-38)"
+        },
+        {
+            "undefined": "S.6.1",
+            "Service": "Basic Network Monitoring Service (AWSMSP-39)",
+            "High Level Description": "This service configures Native AWS Networking change management and monitoring services to meet the CRS selections made regarding desired Network Monitoring service customization.",
+            "What will be built": "1.  CRS Selection criteria (how customers can select the configuration of their Basic Network Monitoring Service)\r\n2.  Create automation script to for the configuration of the Basic Network Monitoring service per the CRS selections (CloudWatch Alerts, Triggers, Logs, Flow Logs, Config, CloudTrail)\r\n3.  Create TAM procedures to change / update the configurations\r\n4. Create Monthly Basic Monitoring Report Template\r\n5.  Create report email notification template",
+            "3rd Party Tools Requirement": "1.  AWS CloudWatch, AWS CloudWatch Logs, VPC Flow Logs, AWS Config, AWS CloudTrail, SES, SNS, AWS Personal Health Dashboard (No GovCloud)",
+            "MSP Checklist Reference": "9.5 - Proactive Monitoring and Alerting\r\n9.6 - Next Generation Monitoring Capabilities\r\n9.9 - Event Management"
+        },
+        {
+            "High Level Description": "Deliverables:  Network Threshold Crossing Alerts, Monthly Basic Monitoring Report"
+        },
+        {
+            "High Level Description": "Estimate: Build:  40 hours, Setup Per Customer: 1 Hour, Per Month Per Customer:  .5 Hours"
+        },
+        {
+            "undefined": "AWS Trusted Advisor - evaluates more than just security - includes evaluating against performance limites for multiple services (e.g. EC2, EBS, Kinesis, SES, VPC, etc.) For security is focused on IAM. Free\r\nAWS CloudWatch - primariliy recource/performance focused; for security can use to set alarms and thresholds for high availability. Is a free basic tier, and then priced according to number and detail level of metrics.\r\nAWS CloudWatch and VPC Flow Logs - may need to aggregate into SIEM. Free\r\nAWS Config - we will use for continuous assessment/compliance, tie to SNS. May need to consider aggregating into CMDB. Priced per number of CIs. \r\nAWS CloudTrail - we will use for continuous assessment/compliance, priced per number and type (data/management) of API calls monitored.\r\nAWS Shield Standard/Advanced - protect against DDOS, Standard is free if we want to have an option for Advanced for additional protection of applications there is a fee.\r\nAWS KMS - we need to determine whether client using client/service side libraries, will they use Cloud HSM or on premise HSM?\r\nAlso basic service would be configuring ACLs and security groups.",
+            "Service": "Basic Security Monitoring Service (AWSMSP-40)",
+            "High Level Description": "This service configures Native AWS Security change management and monitoring services to meet the CRS selections made regarding desired Network Monitoring service customization.",
+            "What will be built": "1.  CRS Selection criteria (how customers can select the configuration of their Basic Security Monitoring Service)\r\n2.  Create automation script to for the configuration of the Basic Network Monitoring service per the CRS selections (CloudWatch Alerts, Triggers, Logs, Flow Logs, Config, CloudTrail)\r\n3.  Create TAM procedures to change / update the configurations\r\n4.  Data included in Monthly Basic Monitoring Report",
+            "3rd Party Tools Requirement": "1.  AWS Trusted Advisor, AWS CloudWatch, AWS CloudWatch Logs, VPC Flow Logs, AWS Config, AWS CloudTrail, AWS Shield Standard, AWS Shield Advanced (No GovCloud), AWS KMS",
+            "MSP Checklist Reference": "8.1.3 - Security Management\r\n8.2.3 - Security Event Logging and Retention\r\n8.2.4 - Security Event Logging and Retention\r\n8.4 - Service Continuity\r\n9.5 - Proactive Monitoring and Alerting\r\n9.6 - Next Generation Monitoring Capabilities\r\n9.9 - Event Management"
+        },
+        {
+            "High Level Description": "Deliverables:  Security Threshold Crossing Alerts, Monthly Basic Monitoring Report"
+        },
+        {
+            "High Level Description": "Estimate: Build: 40 hours, Setup Per Customer: 1 Hour, Per Month Per Customer:  .5 Hours"
+        },
+        {
+            "Service": "Performance Monitoring Service (AWSMSP-41)"
+        },
+        {
+            "undefined": "S.7.1",
+            "Service": "Basic Performance Monitoring Service (AWSMSP-42)",
+            "High Level Description": "This service configures Native AWS Performance monitoring services to meet the CRS selections made regarding desired Network Monitoring service customization.",
+            "What will be built": "1.  CRS Selection criteria (how customers can select the configuration of their Basic Performance Monitoring Service)\r\n2.  Create automation script to for the configuration of the Basic Performance Monitoring service per the CRS selections (CloudWatch Alerts, Triggers, Logs, Flow Logs, Config, CloudTrail)\r\n3.  Create TAM procedures to change / update the configurations\r\n4.  Data included in Monthly Basic Monitoring Report",
+            "3rd Party Tools Requirement": "1.  AWS CloudWatch, AWS X-Ray (Microservices), AWS EC2 Systems Manager, AWS Personal Health Dashboard (No GovCloud)",
+            "MSP Checklist Reference": "9.5 - Proactive Monitoring and Alerting\r\n9.6 - Next Generation Monitoring Capabilities\r\n9.9 - Event Management"
+        },
+        {
+            "High Level Description": "Deliverables:  Performance Threshold Crossing Alerts, Performance Based Actions, Monthly Basic Monitoring Report"
+        },
+        {
+            "High Level Description": "Estimate: Build:  40 hours, Setup Per Customer: .5 Hours, Per Month Per Customer:  .25 Hours"
+        },
+        {
+            "Service": "Performance & Financial Optimization (AWSMSP-43)"
+        },
+        {
+            "undefined": "S.8.1",
+            "Service": "Monthly Performance Optimization Recommendation (AWSMSP-44)",
+            "High Level Description": "Once a month, our TAM will collect the assess the monthly basic monitoring report, assess the customer AWS environment and prepare the Monthly Performance Optimization Recommendation as part of the  Monthy Customer AWS Recommendation report with detail actions the customer can take action on to improve the overall performance (network, security or performance) of their AWS environment.",
+            "What will be built": "1.  Data from Monthly Basic Monitoring Report (both raw data and formal report) will be used as part of the assessment (See Network and Security Monitoring and Basic Performance Monitoring Services)\r\n2.  Create TAM AWS Environment assessment procedures\r\n4.  Monthy Customer AWS Recommendation Report Template\r\n5.  Create report email notification template",
+            "3rd Party Tools Requirement": "N/A",
+            "MSP Checklist Reference": "11.2.2 - Customer Review\r\n12.3 - Performance Analysis Reports\r\n13.1 - Internal Process Optimization"
+        },
+        {
+            "High Level Description": "Deliverables:   Monthy Customer AWS Recommendation Report"
+        },
+        {
+            "High Level Description": "Estimate: Build:  40 hours, Setup Per Customer: .25 Hours, Per Month Per Customer:  1 Hours"
+        },
+        {
+            "undefined": "S.8.2",
+            "Service": "Monthly Financial Optimization Recommendation (AWSMSP-45)",
+            "High Level Description": "Once a month, our TAM will collect the assess the monthly basic monitoring report, assess the customer AWS environment and prepare the Monthly Financial Optimization Recommendation as part of the  Monthy Customer AWS Recommendation report with detail actions the customer can take action on to improve the overall financial performance of their AWS environemnt.",
+            "What will be built": "1.  Data from Monthly Basic Monitoring Report (both raw data and formal report) will be used as part of the assessment (See Network and Security Monitoring and Basic Performance Monitoring Services)\r\n2.  Create TAM AWS Environment assessment procedures",
+            "3rd Party Tools Requirement": "N/A",
+            "MSP Checklist Reference": "11.2.2 - Customer Review\r\n13.1 - Internal Process Optimization"
+        },
+        {
+            "High Level Description": "Deliverables:  Monthy Customer AWS Recommendation Report"
+        },
+        {
+            "High Level Description": "Estimate: Build:  24 hours, Setup Per Customer: .25 Hours, Per Month Per Customer:  1 Hours"
+        },
+        {
+            "undefined": "S.8.3",
+            "Service": "Monthly SLA Optimization (AWSMSP-46)",
+            "High Level Description": "Once a month, our TAM will review SLAs with the customer and recommend changes or provide evidence of corrective actions take against existing SLAs",
+            "3rd Party Tools Requirement": "N/A",
+            "MSP Checklist Reference": "11.2.2 - Customer Review\r\n13.1 - Internal Process Optimization\r\n14.1 - SLA Optimization"
+        },
+        {
+            "High Level Description": "Deliverables:  Monthy Customer AWS Recommendation Report"
+        },
+        {
+            "High Level Description": "Estimate: Build:  24 hours, Setup Per Customer: .25 Hours, Per Month Per Customer:  1 Hours"
+        },
+        {
+            "Service": "Notification Service (AWSMSP-47)"
+        },
+        {
+            "undefined": "S.9.1",
+            "Service": "Notification Service (AWSMSP-48)",
+            "High Level Description": "Automates the creation and configuration of secure communications (emails, alerts and SMS messages to the customer) per the CRS selections.",
+            "What will be built": "1.  CRS Selection criteria (how customers can select the configuration of their Notification Service)\r\n2.  Creates possible Notification models and respective selection use cases for each (Email, SMS, Push)\r\n3.  Create automation script to for the configuration of the Notification Models\r\n4.  Create TAM procedures to configure new customer log integrations\r\n5.  Create Monthly Notification Summary Report Template\r\n6.  Create report email notification template",
+            "3rd Party Tools Requirement": "1.  AWS SES, SNS, SWF",
+            "MSP Checklist Reference": "9.10.2 - Incident Management"
+        },
+        {
+            "High Level Description": "Deliverables:  Configured Customer Notification Service, Monthly Notification Summary Report"
+        },
+        {
+            "High Level Description": "Estimate: Build:  40 hours, Setup Per Customer: 2 Hours, Per Month Per Customer:  .5 Hours"
+        },
+        {
+            "Service": "Technical Account Manager (AWSMSP-49)"
+        },
+        {
+            "undefined": "S.10.1",
+            "Service": "Named Technical Account Manager (AWSMSP-50)",
+            "High Level Description": "Each customer will be assigned a named Technical Account Manager (TAM).  The TAM is a Unisys AWS certified architect/engineer that will be the primary human interface for their Unisys AWS Managed Services engagement.",
+            "What will be built": "1.  TAM Role definition\r\n2.  TAM Job Requisition\r\n3.  TAM SLAs\r\n4.  TAM Customer engagement CONOPS",
+            "3rd Party Tools Requirement": "N/A",
+            "MSP Checklist Reference": "11.1 - Customer Satisfaction\r\n11.2 - Customer Review"
+        },
+        {
+            "High Level Description": "Deliverables:  Technical Account Manager Contact Information, TAM SLAs"
+        },
+        {
+            "High Level Description": "Estimate: Build:  16 hours, Setup Per Customer: 1 Hours, Per Month Per Customer:  0 Hours"
+        },
+        {
+            "Service": "AWS Services Expertise (AWSMSP-51)"
+        },
+        {
+            "undefined": "S.11.1",
+            "Service": "Monthly AWS Service Presentation (AWSMSP-52)",
+            "High Level Description": "As part of the managed service, our customer has the opportunity to receive a 1 hour focused AWS Service presentation that will include an AWS service overview and a live demonstration of the most popular use cases in a demonstration AWS environment",
+            "What will be built": "1.  Prepare the Presentation template slide deck\r\n2.  Develop content on each of the AWS services\r\n3.  This should be fielded and managed by our AWS Center of Enablement (dependent on it for content)\r\n4.  Create access rules / procedures / content management",
+            "3rd Party Tools Requirement": "1.  Unisys AWS Center of Enablement\r\n2.  AWS Managed Services AWS Demonstration Environment",
+            "MSP Checklist Reference": "3.1 - AWS Knowledge"
+        },
+        {
+            "High Level Description": "Deliverables:  Monthy AWS Service Presentation"
+        },
+        {
+            "High Level Description": "Estimate: Build:  200 hours, Setup Per Customer: 1 Hours, Per Month Per Customer:  4 Hours"
+        },
+        {
+            "undefined": "S.11.2",
+            "Service": "AWS Service Wiki (AWSMSP-53)",
+            "High Level Description": "Unisys will allow each the AWS Core Managed service customers to access the Unisys AWS Service Wiki site which contains a collection of documents, videos, links and use case documentation that the customers can use to better understand each of the AWS services.  ",
+            "What will be built": "1.  Develop AWS Service Wiki (AWS said they would help with this) Site\r\n2.  This should be fielded and managed by our AWS Center of Enablement (dependent on it for content)\r\n3.  Create access rules / procedures / content management",
+            "3rd Party Tools Requirement": "1.  Unisys AWS Center of Enablement\r\n2.  Wiki site (TBD)",
+            "MSP Checklist Reference": "3.1 - AWS Knowledge\r\n8.1.7 - Security Management"
+        },
+        {
+            "High Level Description": "Deliverables:  AWS Services WIKI"
+        },
+        {
+            "High Level Description": "Estimate: Build:  200 hours, Setup Per Customer: 0 Hours, Per Month Per Customer:  .25 Hours"
+        },
+        {
+            "Service": "Service Desk Service (AWSMSP-54)"
+        },
+        {
+            "undefined": "S.12.1",
+            "Service": "Core Service Desk (AWSMSP-55)",
+            "High Level Description": "Establish a core hours manned service desk, with after hours support via on-call phone and after hours response SLA.  Utilize cost effective service desk software to assist with logging and tracking service desk communications.",
+            "What will be built": "1.  Select, Install and Configure Service Desk Tooling\r\n2.  Develop Service Desk CONOPs\r\n3.  Develop Customer Service Desk Usage Procedures\r\n4.  Develop Service Desk SLAs\r\n5.  Develop Monthly Service Desk Report Template\r\n6.  Create report email notification template",
+            "3rd Party Tools Requirement": "1.  FCHS Augusta\r\n2.  AWS Connect\r\n3.  JIRA Service Desk\r\n4.  Salesforce",
+            "MSP Checklist Reference": "9.1 - Customer Service Availability\r\n9.2 - Service Desk Operations\r\n9.3 - Ticketing System\r\n9.4 - AWS Specific Support Metrics\r\n9.9 - Event Management\r\n9.10 - Incident Management\r\n9.11 - Problem Management"
+        },
+        {
+            "High Level Description": "Deliverables:  Service Desk Usage Prodedures, Service Desk SLAs, Monthly Service Desk Report"
+        },
+        {
+            "High Level Description": "Estimate: Build: 100 Hours, Per Instance Average:  Setup Per Customer: 2 Hours, Per Month Per Customer:  2 Hours"
+        },
+        {
+            "Service": "Incident Management Service (AWSMSP-56)"
+        },
+        {
+            "undefined": "S.13.1",
+            "Service": "Incident Management (AWSMSP-57)",
+            "High Level Description": "Establish an light ITSM platform that will enable the AWS Manage Service to provide and manage Incidents",
+            "What will be built": "1.  Select, Install and Configure Incident Tooling\r\n2.  Develop Service Desk SLAs\r\n3.  Develop Monthly Incident Management Report Template\r\n4.  Create report email notification template",
+            "3rd Party Tools Requirement": "1.  FCHS Augusta\r\n2.  JIRA Service Desk\r\n3.  ServiceNow\r\n4.  ScienceLogic",
+            "MSP Checklist Reference": "9.2 - Service Desk Operations\r\n9.3 - Ticketing System9.9 - Event Management\r\n9.4 - AWS Specific Support Metrics\r\n9.10 - Incident Management\r\n9.11 - Problem Management\r\n12.1 - Incident Management Reports\r\n12.2 - Non-Service Affecting Incident Reports\r\n12.5 - Exception Reports"
+        },
+        {
+            "High Level Description": "Deliverables:  Incident Management SLAs, Monthly Incident Management Report"
+        },
+        {
+            "High Level Description": "Estimate: Build: 100 Hours, Per Instance Average: Setup Per Customer: 1 Hours, Per Month Per Customer:  2 Hours"
+        },
+        {
+            "Service": "Asset Management Service (AWSMSP-58)"
+        },
+        {
+            "undefined": "S.14.1",
+            "Service": "Asset Management (AWSMSP-59)",
+            "High Level Description": "xxx",
+            "What will be built": "xxx",
+            "3rd Party Tools Requirement": "1.  CloudHealth",
+            "MSP Checklist Reference": "9.12 - Asset Management\r\n12.4 - Asset / Resource Reports"
+        },
+        {
+            "Service": "Configuration Management Service (AWSMSP-60)"
+        },
+        {
+            "undefined": "S.15.1",
+            "Service": "Configuration Management (AWSMSP-61)",
+            "High Level Description": "xxx",
+            "What will be built": "xxx",
+            "3rd Party Tools Requirement": "1.  CloudHealth\r\n2.  Fugue\r\n3.  AWS Config",
+            "MSP Checklist Reference": "9.13 Configuration and Change Management"
+        },
+        {
+            "undefined": "S.15.2",
+            "Service": "CMDB (AWSMSP-62)",
+            "High Level Description": "xxx",
+            "What will be built": "xxx",
+            "3rd Party Tools Requirement": "1.  CloudHealth",
+            "MSP Checklist Reference": "9.13-3 Configuration and Change Management"
+        },
+        {
+            "Service": "Gold Services - Many Individual Volume Based Services"
+        },
+        {
+            "Service": "Cost Model",
+            "undefined": "Per Use Cost model.  Each service will have a rate card that accounts for and uses service limits (labor, schedule) risk."
+        },
+        {
+            "Service": "Description",
+            "undefined": "These Per use services are where Unisys really adds value to the customer from a differentiation standpoint.  By offering these services per use, the customer can customize the overall managed service to their specific needs and budget."
+        },
+        {
+            "Service": "Service",
+            "High Level Description": "High Level Description",
+            "What will be built": "What will be built",
+            "3rd Party Tools Requirement": "3rd Party Tools Requirement"
+        },
+        {
+            "Service": "White Glove Application Migration Service (AWSMSP-252)"
+        },
+        {
+            "undefined": "G.1.1",
+            "Service": "Application Discovery Service (AWSMSP-253)",
+            "High Level Description": "The start of each migration requires an assessment of the current application environment.  This services will have a tiered pricing model depending on number of objects being scanned.  The output of these discovery will yield an application complexity score, a Cloud Suitability assessment and a recommended target AWS architecture.  The discovery will be primarily automated, but will also be accompanied with a document questionnaire to be completed by a customer application SME.  Key to this working is to make sure we can use automation, and mandate the availability of access to application SMEs (we cannot do it in a vacuum).",
+            "What will be built": "1.  What we will build will depend on what vendor we select.  Some vendors come with more features:  Conduct AoA on vendor that will best meet our intent of this service (optimized to discover and then migrate to AWS only)\r\n2.  Develop Application Discovery Questionnaire\r\n3.  Develop Cloud Suitability Assessment Report Template (maybe algorithm if not included with discovery tool)\r\n4.  Develop AWS Architecture Recommendation Document Template (with ready access to all the AWS icons)",
+            "3rd Party Tools Requirement": "1.  AWS Application Discovery Service\r\n2.  Risk Networks - CloudScape\r\n3.  ScienceLogic\r\n4.  Device42\r\n5.  Cloudamize (\r\n6.  ScienceLogic (Solaris, AIX, zOS, Oracle?)",
+            "MSP Checklist Reference": "7.1 - Infrastructure Migration Capabilities Leveraging AWS Best Practices\r\n7.2 - Application Migration Capabilities",
+            "AWS Trainings": "• Cloud Adoption Framework"
+        },
+        {
+            "High Level Description": "Deliverables:  Customer Application Discovery Data,  Cloud Suitability Assessment, AWS Architecture Recommendation"
+        },
+        {
+            "High Level Description": "Estimate: Build:  200 hours, Per Instance Average:  15 Hours"
+        },
+        {
+            "undefined": "G.2.1",
+            "Service": "Application Migration Planning Service (AWSMSP-254)",
+            "High Level Description": "See Application Migration Planning Service",
+            "What will be built": "See Application Migration Planning Service",
+            "3rd Party Tools Requirement": "See Application Migration Planning Service",
+            "MSP Checklist Reference": "7.1 - Infrastructure Migration Capabilities Leveraging AWS Best Practices\r\n7.2 - Application Migration Capabilities",
+            "AWS Trainings": "• Cloud Adoption Framework"
+        },
+        {
+            "High Level Description": "Deliverables:  See Application Migration Planning Service"
+        },
+        {
+            "High Level Description": "Estimate: Build:  See Application Migration Planning Service"
+        },
+        {
+            "undefined": "G.3.1",
+            "Service": "Application Performance Assessment Service - Source (AWSMSP-261)",
+            "High Level Description": "Uses Application Performance Assessment Service:  In order to enable for a pre and post migration performance assessment, it is important to conduct a pre-migration performance assessment of the current operating environment using like performance assessment tools.  Using like tools prevents deviation based on performance metric algorithyms, collection timing and frequency, etc.  This performance baseline will be evaluation with the customer and the baseline performance metrics will be agreed upon as the baseline to use for post migration comparison (managed expectations)",
+            "What will be built": "1.  See Application Performance Assessment Service\r\n2.  Develop Customer Performance Baseline Comparison Metrics List Template\r\n",
+            "3rd Party Tools Requirement": "See Application Performance Assessment Service",
+            "MSP Checklist Reference": "7.1 - Infrastructure Migration Capabilities Leveraging AWS Best Practices\r\n7.2 - Application Migration Capabilities"
+        },
+        {
+            "High Level Description": "Deliverables:  See Application Performance Assessment Service, Customer Performance Baseline Comparison Metrics List"
+        },
+        {
+            "High Level Description": "Estimate: Build:  See Application Performance Assessment Service, Build: 8 Hours, Add Per Instance  2 Hours"
+        },
+        {
+            "undefined": "G.1.2",
+            "Service": "A. Lift & Shift Migration Pattern (AWSMSP-254)",
+            "High Level Description": "This application migration execution pattern is based on the traditional \"Lift and Shift\" or \"Rehost\" pattern of the 6 R's.  In this pattern, applications are made of 1 or more physical or virtual machines of operating systems that have like Amazon Machine Images (AMIs) available in the customer's cloud service catalog.  The AWS Managed Services migration team will select the right set of automated VM and Data migration tools to rapidly migrate the workloads, as is to the recommended AWS Architecture from the discovery phase.  The migration team will first create a application networking cloud formation template to assure the proper VPC, Subnets, Routes, Security Groups, Keys, Elastic IPs, Elastic Network Interfaces, etc.) are available for the migration prior to the actual migration.  Once ready, the migration will be executed, usually in minutes or hours depending the amount of data or size of the machine images to be migrated.  Once complete, Post migration testing and performance assessments can be completed.  Includes migration prep, 1 Test migration, actual migration",
+            "What will be built": "1.  Definition of the Lift and Shift capability\r\n2.  Develop Lift and Shirt Use Cases and Patterns and demonstrations for each\r\n3.  Define Standard, Moderate and Complex Applications for pricing\r\n4.  Prepare General Application CloudFormation templates that meet the standard federal standards (NIST, FISMA, etc)\r\n5.  Prepare Vendor collection recommendation per application type (VMWare - AWS, HyperV to AWS, Physical to AWS, SQL Server, Oracle, etc.).  Tooling patterns should drive vendor selection\r\n6.  Develop Migration Execution Report Template\r\n7.  Develop Application Operating Specifications Template (Details of all the resources currently in use related to the application)",
+            "3rd Party Tools Requirement": "1.  AWS Database Migration Service\r\n2.  AWS Server Migration Service\r\n3.  Velastrata\r\n4.  CloudEndure\r\n5.  Racemi\r\n6.  AWS Snowball, Snowmobile\r\n7.  xxx",
+            "MSP Checklist Reference": "7.1 - Infrastructure Migration Capabilities Leveraging AWS Best Practices\r\n7.2 - Application Migration Capabilities"
+        },
+        {
+            "High Level Description": "Deliverables:  Operating Application Hosting environment (Network and monitoring), Migrated Application and Data, Migration Execution Report, Application Operations Specification"
+        },
+        {
+            "High Level Description": "Estimate: Build: 300 Hours, Per Instance Average:  42 Hours"
+        },
+        {
+            "undefined": "G.1.3",
+            "Service": "Application Operations Migration (AWSMSP-255)",
+            "High Level Description": "While the application is being migrated, the Unisys AWS Managed service migration engineers will work with the current customer application operations teams to assist with the migration of their operational procedures and polices to reflect the new operating environment and application change documentation.  Included Operations discovery, Policy and Procedure Review, Recommended Procedure and Policy changes, Post migration difference summary, Steps to migrate during migration",
+            "What will be built": "1.  Develop the Unisys AWS Operations Whitepaper discussion typical operational best prractices in AWS\r\n2.  Develop document covering traditional operation policy and procedure changes based on typical on-premise or data center operations.\r\n3.  Develop Operations migration execution steps document template\r\n4.  Develop Unisys AWS Operations Migration support CONOPs and Limits during the test and actual migration",
+            "3rd Party Tools Requirement": "N/A",
+            "MSP Checklist Reference": "7.1 - Infrastructure Migration Capabilities Leveraging AWS Best Practices\r\n7.2 - Application Migration Capabilities"
+        },
+        {
+            "High Level Description": "Deliverables:  Unisys AWS Operations Whitepaper, Current Operations Policy and Procedures Review with comments, Policy and Procedure change recommendations, Operations Migration Execution Steps, Operations Migration Support during test and actual migration"
+        },
+        {
+            "High Level Description": "Estimate: Build: 120 Hours, Per Instance Average:  30 Hours"
+        },
+        {
+            "undefined": "G.3.1",
+            "Service": "Application Performance Assessment Service - Target (AWSMSP-261)",
+            "High Level Description": "Uses Application Performance Assessment Service:  The same tool that conducted the pre-migration source performance baseline data collection will collect post migration performance data.  The agreed upon metrics will be compared against the performance baseline to assure that the performance in the new target environment is better or is within the agreed upon performance degradation parameters.",
+            "What will be built": "1.  See Application Performance Assessment Service\r\n2.  Develop Pre-Post Migration Performance Metric Comparison Report Template\r\n",
+            "3rd Party Tools Requirement": "See Application Performance Assessment Service",
+            "MSP Checklist Reference": "7.1 - Infrastructure Migration Capabilities Leveraging AWS Best Practices\r\n7.2 - Application Migration Capabilities"
+        },
+        {
+            "High Level Description": "Deliverables:  See Application Performance Assessment Service, Pre-Post Migration Performance Metric Comparison Report"
+        },
+        {
+            "High Level Description": "Estimate: Build:  See Application Performance Assessment Service, Build: 8 Hours, Add Per Instance  2 Hours"
+        },
+        {
+            "undefined": "G.1.4",
+            "Service": "Migration Validation & Delivery (AWSMSP-256)",
+            "High Level Description": "Utilizing the Pre and Post Migration performance assessments, the Applications Migration Execution (Pattern) Project Plan review / log, the Applications Operations Migration Execution Review, The AWS Managed service migration team will conduct and support a migration validation with the customer in the form of a User Acceptance Test (UAT) and prepare a final migration summary report and conduct the official operational handover to the customer's operations team.  (UAT period of 1 week maximum, support hours capped at 40 hours total)",
+            "What will be built": "1.  Develop Final Migration Summary Report Template\r\n2.  Develop UAT Support CONOPs and limitations document\r\n3.  Develop Final Migration Sign-Off Document",
+            "3rd Party Tools Requirement": "N/A",
+            "MSP Checklist Reference": "7.1 - Infrastructure Migration Capabilities Leveraging AWS Best Practices\r\n7.2 - Application Migration Capabilities"
+        },
+        {
+            "High Level Description": "Deliverables:  Support for Customer lead Application Migration UAT Period, Final Migration Summary Report"
+        },
+        {
+            "High Level Description": "Estimate: Build: 40 Hours, Per Instance Average:  26 Hours"
+        },
+        {
+            "Service": "Application Migration Planning Service (AWSMSP-257)"
+        },
+        {
+            "undefined": "G.2.1",
+            "Service": "Single Application Migration Planning (AWSMSP-258)",
+            "High Level Description": "For single applications, migration planning will be conducted using pre-defined project migration templates, targeted per migration pattern.  The template will be customized to the customer's application, timing and complexity.  The complexity will also vary the base price and limits of this service.  Includes the hours to manage to the project plan during execution.",
+            "What will be built": "1.  Generate the Project templates per pattern/complexity",
+            "3rd Party Tools Requirement": "1.  Microsoft Project",
+            "MSP Checklist Reference": "6.1 - Solution Capabilities\r\n7.1 - Infrastructure Migration Capabilities Leveraging AWS Best Practices\r\n7.2 - Application Migration Capabilities",
+            "AWS Trainings": "• Cloud Adoption Framework\r\n• Well Architected Framework"
+        },
+        {
+            "High Level Description": "Deliverables:  Pre-Execution Migration Project Plan,  Post-Execution Migration Project Plan with adjustments"
+        },
+        {
+            "High Level Description": "Estimate: Build: 60 Hours, Per Instance Average:  17 Hours"
+        },
+        {
+            "undefined": "G.2.2",
+            "Service": "Application Portfolio Migration Planning (AWSMSP-259)",
+            "High Level Description": "If the customer is migrating an application portfolio/family, this service will enable them to package and managed the migration planning as a single service for the collection.  The complexity of the portfolio will dictate which provide we use.  TDS is an option for large data center migrations.  Includes the hours to manage to the project plan during execution.",
+            "What will be built": "1.  Generate the Project templates per pattern/complexity\r\n2.  Configure TDS migration patterns based on A-F??",
+            "3rd Party Tools Requirement": "1.  Microsoft Project\r\n2.  TDS??",
+            "MSP Checklist Reference": "6.1 - Solution Capabilities\r\n7.1 - Infrastructure Migration Capabilities Leveraging AWS Best Practices\r\n7.2 - Application Migration Capabilities",
+            "AWS Trainings": "• Cloud Adoption Framework\r\n• Well Architected Framework"
+        },
+        {
+            "High Level Description": "Deliverables:  Pre-Execution Migration Project Plan,  Post-Execution Migration Project Plan with adjustments"
+        },
+        {
+            "High Level Description": "Estimate: Build: 120 Hours, Per Instance Average:  87 Hours"
+        },
+        {
+            "Service": "Application Performance Assessment Service (AWSMSP-260)"
+        },
+        {
+            "undefined": "G.3.1",
+            "Service": "Single Application Performance Assessment (1-Hour, 1-Day, 7-Day, 1 Month, 6 Months, 1 Year) (AWSMSP-261)",
+            "High Level Description": "This stand alone or bundled service allows the AWS Managed Service team to setup, configure and execute an Application Performance Assessment of a customer application.  (Need to set Node Limit, have Node Surge pricing)",
+            "What will be built": "1.  Select, Install and Configure Application Performance Assessment Tooling\r\n2.  Develop Package template to provide to customer security teams to allow the install of this software on their networks or open the required ports from our managed service location of the APM vendor's SaaS endpoint.\r\n3.  Develop Application Performance Assessment Template\r\n4.  Enable performance assessment comparison (from prior assessments",
+            "3rd Party Tools Requirement": "1.  AppDynamics\r\n2.  New Relic\r\n3.  ScienceLogic",
+            "MSP Checklist Reference": "7.1 - Infrastructure Migration Capabilities Leveraging AWS Best Practices\r\n7.2 - Application Migration Capabilities"
+        },
+        {
+            "High Level Description": "Deliverables:  Application Performance Metrics Data, Application Performance Assessment Report"
+        },
+        {
+            "High Level Description": "Estimate: Build: 60 Hours, Per Instance Average:  32 Hours"
+        },
+        {
+            "Service": "Hybrid Cloud Integration Service (AWSMSP-262)"
+        },
+        {
+            "undefined": "G.4.1",
+            "Service": "IdAM Integration (AWSMSP-263)",
+            "High Level Description": "Services associated with establishing integration with SAML based multi-factor authentication requirements (CAC/PIV cards for example).  This service will only cover extending the customer's On-Premise Microsoft Active Directory to the AWS environment by using AWS Native Directory services or standing up a remote Domain Controller VM (cluster) and syncing.  We will also support SAML integration to PIV / CAC enable the customer AWS environment",
+            "What will be built": "1.  Develop Parameters that the customer can select from when requesting this service\r\n2.  Develop Automation around the creation of DC's and the syncronization\r\n3.  Develop scripts around SAML integration, Integration with AWS and get understanding of the 3rd party authenitcation tool market and common integration patterns\r\n4.  Develop IdAM Integration Summary Report Template\r\n5.  Develop Sales Demo's",
+            "3rd Party Tools Requirement": "1.  Microsoft ADFS, Active Directory, Domain Controller",
+            "MSP Checklist Reference": "N/A"
+        },
+        {
+            "High Level Description": "Deliverables:  Operational IdAM Integration, IdAM Integration Summary Report"
+        },
+        {
+            "High Level Description": "Estimate: Build: 120 Hours, Per Instance Average:  34 Hours"
+        },
+        {
+            "undefined": "G.4.2",
+            "Service": "On-Premise Storage Integration (AWSMSP-264)",
+            "High Level Description": "Services associated with extending customer's existing on-premise storage service with AWS cloud storage.  This service will exclusively use the AWS Cloud Storage Gateway service.  It will support the various use AWS Storage Gateway delivery models and use cases.",
+            "What will be built": "1.  Develop Parameters that the customer can select from when requesting this service\r\n2.  Develop the collection of supported AWS Storage Gateway delivery models and procedures and automation for each model.\r\n3.  Develop IdAM Integration Summary Report Template\r\n4.  Develop Sales Demo's",
+            "3rd Party Tools Requirement": "1.  AWS Storage Gateway",
+            "MSP Checklist Reference": "N/A"
+        },
+        {
+            "High Level Description": "Deliverables:  Operational AWS Storage Gateway, AWS Storage Gateway Summary Report"
+        },
+        {
+            "High Level Description": "Estimate: Build: 120 Hours, Per Instance Average:  19 Hours"
+        },
+        {
+            "undefined": "G.4.3",
+            "Service": "External Network Connection (AWSMSP-265)",
+            "High Level Description": "Service that will extend the customer's existing on premise network to AWS environment.  This service will include IP Address planning and the use of AWS external network connection services to extend the customers network.  This service will use hardened procedures and automation to expedite the hybrid cloud connectivity between the customer's data center and their AWS environment.",
+            "What will be built": "1.  Develop Parameters that the customer can select from when requesting this service\r\n2.  Develop the collection of supported AWS Hybrid Cloud Network Connection delivery models and procedures and automation for each model.\r\n3.  Select a DirectConnect Partner we want to focus our service around (Equinix, Brocade, F5, AT&T, Cisco, etc.)\r\n4.  Develop Hybrid Network Connectivity Architecture Template\r\n5.  Develop External Network Connection Summary Report Template",
+            "3rd Party Tools Requirement": "1.  AWS DirectConnect, VPN Gateway",
+            "MSP Checklist Reference": "N/A"
+        },
+        {
+            "High Level Description": "Deliverables:  Operational Network Connectivity between customer's site and AWS environment, Hybrid Network Connectivity Architecture, External Network Connection Summary Report"
+        },
+        {
+            "High Level Description": "Estimate: Build: 200 Hours, Per Instance Average:  43 Hours"
+        },
+        {
+            "undefined": "G.4.4",
+            "Service": "TIC/MTIPS Connection (AWSMSP-266)",
+            "High Level Description": "Service that will connect the customer's AWS environment to the customer's Trusted Internet Connection (TIC) or Managed Trusted Internet Protocol Services (MTIPS) providers.",
+            "What will be built": "1.  Develop Parameters that the customer can select from when requesting this service\r\n2.  Develop the collection of supported AWS TIC/MTIPS Network Connection delivery models and procedures and automation for each model.\r\n3.  Data included in Hybrid Network Connectivity Architecture and External Network Connection Summary Report",
+            "3rd Party Tools Requirement": "1.  AWS DirectConnect, VPN Gateway",
+            "MSP Checklist Reference": "N/A"
+        },
+        {
+            "High Level Description": "Deliverables:  Operational Network Connectivity between customer's TIC/MTIPS and AWS environment, Hybrid Network Connectivity Architecture, External Network Connection Summary Report"
+        },
+        {
+            "High Level Description": "Estimate: Build: 200 Hours, Per Instance Average:  43 Hours"
+        },
+        {
+            "Service": "DevOps Platform Configuration Service (AWSMSP-267)"
+        },
+        {
+            "undefined": "G.5.1",
+            "Service": "Configure DevOps Team Collaboration Suite (AWSMSP-268)",
+            "High Level Description": "This service will establish a hosted collaboration suite for the customer that will include Agile Project Management, Team Collaboration and document management, Source code repository (Git Based) and Chat Operations using the Atlassian Suite of tools.  NOTE, this will be a hosted solution, with changes handled by the service desk and TAM, must account for those hours in the pricing.",
+            "What will be built": "1.  Develop Parameters that the customer can select from when requesting this service\r\n2.  Develop Setup procedures and automation\r\n3.  Develop Change procedures for Service Desk\r\n4.  Develop Knowledge base for Service Desk on most common questions\r\n5.  Develop the Collaboration Suite Links and Procedures Guide Template",
+            "3rd Party Tools Requirement": "1.  JIRA Atlassion Suite (JIRA, Confluence, BitBucket, HipChat)",
+            "MSP Checklist Reference": "9.14 - Release and Deployment Management\r\n9.15 - DevOps Release and Deployment Practices"
+        },
+        {
+            "High Level Description": "Deliverables:  Operating DevOps Team Collaboration Suite, Collaboration Suite Links and Procedures Guide"
+        },
+        {
+            "High Level Description": "Estimate: Build: 40 Hours, Per Instance Average:  15 Hours"
+        },
+        {
+            "undefined": "G.5.2",
+            "Service": "Configure AWS Native DevOps Pipeline (AWSMSP-269)",
+            "High Level Description": "This service will configure the AWS Native Continuous Integration / Continuous Delivery services for the customer.  This DevOps pipeline will enable automated build, integration with your favorite testing tools, and automated deploy of you application to AWS (CloudFormation, Elastic Beanstalk or OpsWorks)",
+            "What will be built": "1.  Develop Parameters that the customer can select from when requesting this service\r\n2.  Develop Devlivery models of this service and automations around each.\r\n3.  Develop Pipeline Configuration Report Template\r\n4.  Develop Sales Demo's",
+            "3rd Party Tools Requirement": "1.  AWS CodeBuild, CodeCommit, CodeDeploy, CodePipeline, Elastic Beanstalk, OpsWorks, CloudFormation, CloudWatch",
+            "MSP Checklist Reference": "9.14 - Release and Deployment Management\r\n9.15 - DevOps Release and Deployment Practices",
+            "AWS Trainings": "AWS Pipeline Management Services"
+        },
+        {
+            "High Level Description": "Deliverables:  Operating AWS Native DevOps Pipeline, Pipeline Configuration Report"
+        },
+        {
+            "High Level Description": "Estimate: Build: 80 Hours, Per Instance Average:  14 Hours"
+        },
+        {
+            "undefined": "G.5.3",
+            "Service": "Configure Open Source Java Application DevOps Pipeline (AWSMSP-270)",
+            "High Level Description": "This service will configure the Java Application optimized Continuous Integration / Continuous Delivery services for the customer.  This DevOps pipeline will enable automated build, integration with your favorite testing tools, and automated deploy of you application to AWS (CloudFormation, Elastic Beanstalk or OpsWorks).  This service will also include the integration of the DevOps Team Collaboration Suite",
+            "What will be built": "1.  Develop Parameters that the customer can select from when requesting this service\r\n2.  Develop Devlivery models of this service and automations around each.\r\n3.  Develop Sales Demo's",
+            "3rd Party Tools Requirement": "1.  SourceCode Repo (GitLab) \r\n2.  Continuous Integration (Jenkins)\r\n3.  Automated Build (Maven)\r\n4.  Automated Deploy (CloudFormation, Elastic Beanstalk, OpsWorks)",
+            "MSP Checklist Reference": "9.14 - Release and Deployment Management\r\n9.15 - DevOps Release and Deployment Practices"
+        },
+        {
+            "High Level Description": "Deliverables:  Operating Java DevOps Pipeline, Pipeline Configuration Report"
+        },
+        {
+            "High Level Description": "Estimate: Build: 80 Hours, Per Instance Average:  14 Hours"
+        },
+        {
+            "undefined": "G.5.4",
+            "Service": "Configure .Net Application DevOps Pipeline (AWSMSP-271)",
+            "High Level Description": "This service will configure the .Net Application optimized Continuous Integration / Continuous Delivery services for the customer.  This DevOps pipeline will enable automated build, integration with your favorite testing tools, and automated deploy of you application to AWS (CloudFormation, Elastic Beanstalk or OpsWorks).  This service will also include the integration of the DevOps Team Collaboration Suite",
+            "What will be built": "1.  Develop Parameters that the customer can select from when requesting this service\r\n2.  Develop Devlivery models of this service and automations around each.\r\n3.  Develop Sales Demo's",
+            "3rd Party Tools Requirement": "1.  SourceCode Repo (Team Foundation Server) \r\n2.  Continuous Integration (Team Foundation Server)\r\n3.  Automated Build (Team Foundation Server)\r\n4.  Automated Deploy (CloudFormation, Elastic Beanstalk, OpsWorks)",
+            "MSP Checklist Reference": "9.14 - Release and Deployment Management\r\n9.15 - DevOps Release and Deployment Practices"
+        },
+        {
+            "High Level Description": "Deliverables:  Operating .Net DevOps Pipeline, Pipeline Configuration Report"
+        },
+        {
+            "High Level Description": "Estimate: Build: 80 Hours, Per Instance Average:  22 Hours"
+        },
+        {
+            "undefined": "G.5.5",
+            "Service": "Configure Open Source Angular.js Application DevOps Pipeline (AWSMSP-272)",
+            "High Level Description": "This service will configure the Angular.js Application optimized Continuous Integration / Continuous Delivery services for the customer.  This DevOps pipeline will enable automated build, integration with your favorite testing tools, and automated deploy of you application to AWS (CloudFormation, Elastic Beanstalk or OpsWorks).  This service will also include the integration of the DevOps Team Collaboration Suite",
+            "What will be built": "1.  Develop Parameters that the customer can select from when requesting this service\r\n2.  Develop Devlivery models of this service and automations around each.\r\n3.  Develop Sales Demo's",
+            "3rd Party Tools Requirement": "1.  SourceCode Repo (GitLab) \r\n2.  Continuous Integration (Jenkins)\r\n3.  Automated Build (Grunt)\r\n4.  Automated Deploy (CloudFormation, Elastic Beanstalk, OpsWorks)",
+            "MSP Checklist Reference": "9.14 - Release and Deployment Management\r\n9.15 - DevOps Release and Deployment Practices"
+        },
+        {
+            "High Level Description": "Deliverables:  Operating Open Source Angular.js DevOps Pipeline, Pipeline Configuration Report"
+        },
+        {
+            "High Level Description": "Estimate: Build: 80 Hours, Per Instance Average:  14 Hours"
+        },
+        {
+            "undefined": "G.5.6",
+            "Service": "Configure Custom Customer Selected DevOps Pipeline (AWSMSP-273)",
+            "High Level Description": "This service will configure a customer specified  Continuous Integration / Continuous Delivery services for the customer.  This DevOps pipeline will enable automated build, integration with your favorite testing tools, and automated deploy of you application to AWS (CloudFormation, Elastic Beanstalk or OpsWorks).  This service will also include the integration of the DevOps Team Collaboration Suite",
+            "What will be built": "1.  Develop Parameters that the customer can select from when requesting this service\r\n2.  Develop Devlivery models of this service and automations around each.",
+            "3rd Party Tools Requirement": "1.  SourceCode Repo (TBD) \r\n2.  Continuous Integration (TBD)\r\n3.  Automated Build (TBD)\r\n4.  Automated Deploy (CloudFormation, Elastic Beanstalk, OpsWorks)",
+            "MSP Checklist Reference": "9.14 - Release and Deployment Management\r\n9.15 - DevOps Release and Deployment Practices"
+        },
+        {
+            "High Level Description": "Deliverables:  Operating Custom DevOps Pipeline, Pipeline Configuration Report"
+        },
+        {
+            "High Level Description": "Estimate: Build: 160 Hours, Per Instance Average:  33 Hours"
+        },
+        {
+            "Service": "Compliance Service (AWSMSP-274)"
+        },
+        {
+            "undefined": "G.6.1",
+            "Service": "RMF Assessment & Authorization  Service (AWSMSP-275)",
+            "High Level Description": "This service provides RMF compliance services per NIST, PCI-DSS, DoDRMF, etc. for verification of security controls and artifacts per impact level, SCAP checklists, and proactive mitigation of US-CERT, DISA STIGs, CVE, NVD, and CWE known vulnerabilities. Provides compliance for client's Cloud environment for RMF adherence. Provide client with option for multiple RMF support using UCF.",
+            "What will be built": "1.  Develop Parameters that the customer can select from when requesting this service\r\n2.  Create automation script to for the configuration of the Basic Compliance Monitoring service per the CRS selections (Impact Level, RMF)\r\n3.  Create TAM procedures to change / update the configurations\r\n4. Create Monthly Basic Monitoring Report Template\r\n5.  Create report email notification template",
+            "3rd Party Tools Requirement": "1.  EyeRetina or Nessus\r\n2.  NetWitness\r\n3.  AppDetective\r\n4.  ScantoPOAM\r\n5.  UCF\r\n6. xxx",
+            "MSP Checklist Reference": "9.8 Continuous Compliance"
+        },
+        {
+            "High Level Description": "Deliverables:  Control Compliance Report, Monthly Compliance Report"
+        },
+        {
+            "High Level Description": "Estimate: Build:  120 hours, Setup Per Customer: 8 Hours, Per Month Per Customer:  1 Hour"
+        },
+        {
+            "undefined": "G.6.2",
+            "Service": "CDM ATO Service (AWSMSP-276)",
+            "High Level Description": "This service provides Continuous Diagnostics and Mitigation (CDM) per NIST 800-137 and expanded services per DHS. Model off DHS 3-phase approach to continuous ATO.",
+            "What will be built": "1.  Develop Parameters that the customer can select from when requesting this service\r\n2.  Create automation script to for the configuration of the Basic CDM Monitoring service per the CRS selections (real time CDM)\r\n3.  Create TAM procedures to change / update the configurations\r\n4. Create Monthly Basic Monitoring Report Template\r\n5.  Create report email notification template",
+            "3rd Party Tools Requirement": "1.  TrendMicro, Qualys, Appscan, Symantec, Intel/McAfee\r\n2.  SkyHigh Networks\r\n3.  LookingGlass\r\n4.  Imperva\r\n5.  Okta\r\n6.  xxx",
+            "MSP Checklist Reference": "9.8 Continuous Compliance"
+        },
+        {
+            "High Level Description": "Deliverables:  CDM Activity Report, ATO Status Report"
+        },
+        {
+            "High Level Description": "Estimate: Build:  120 hours, Setup Per Customer: 4 Hours, Per Month Per Customer:  1 Hours"
+        },
+        {
+            "Service": "Advanced Monitoring Services (AWSMSP-277)"
+        },
+        {
+            "undefined": "G.7.1",
+            "Service": "Advanced Network Monitoring Service (AWSMSP-278)",
+            "High Level Description": "With advanced Network Performance Montoring and Diagnostics, we can help our customers understand exactly where problems may occur on their network before they cause service affecting events.  We will select from Purpose built 3rd party NPMD vendors to provide the advanced monitoring our customers expect  for their high fidelity network monitoring requirements.",
+            "What will be built": "1.  Develop Parameters that the customer can select from when requesting this service\r\n2.  Select the proper Advanced Network Monitoring Tooling\r\n3.  Develop the architecture and pricing of the selected vendor solution\r\n4.  Develop list of monitoring metrics, relative alerts and triggers, clearing events\r\n5.  Develop Sales Demo's\r\n6.  Develop Monthly Network Monitoring Summary Report Template\r\n7.  Create report email notification template",
+            "3rd Party Tools Requirement": "1.  NetScout\r\n2.  Riverbed\r\n3.  Solarwinds\r\n4.  Cisco\r\n5.  xxx",
+            "MSP Checklist Reference": "9.5 - Proactive Monitoring and Alerting\r\n9.6.2 - Next Generation Monitoring Capabilities\r\n9.6.3 - Next Generation Monitoring Capabilities\r\n9.7.1 - Service Intelligence Reporting and Dashboards for Customers\r\n9.9 - Event Management"
+        },
+        {
+            "High Level Description": "Deliverables:  Performance Threshold Crossing Alerts, Performance Based Actions, Monthly Network Monitoring Summary Report"
+        },
+        {
+            "High Level Description": "Estimate: Build: 140 Hours, Per Instance Average:  32 Hours"
+        },
+        {
+            "undefined": "G.7.2",
+            "Service": "Advanced Security Monitoring Service (AWSMSP-279)",
+            "High Level Description": "With advanced Security  Montoring and Diagnostics, we can help our customers continuously monitor their security posture using industry focused, purpose build security tool vendor capabilities.",
+            "What will be built": "1.  Develop Parameters that the customer can select from when requesting this service\r\n2.  Select the proper Advanced Security Monitoring Tooling\r\n3.  Develop the architecture and pricing of the selected vendor solution\r\n4.  Develop list of security monitoring metrics, relative alerts and triggers, clearing events\r\n5.  Develop Sales Demo's\r\n6.  Develop Monthly Security Monitoring Summary Report Template\r\n7.  Create report email notification template",
+            "3rd Party Tools Requirement": "1.  Trend Micro\r\n2.  AlertLogic\r\n3.  Splunk\r\n4.  Sophos\r\n5.  xxx",
+            "MSP Checklist Reference": "9.5 - Proactive Monitoring and Alerting\r\n9.6.2 - Next Generation Monitoring Capabilities\r\n9.6.3 - Next Generation Monitoring Capabilities\r\n9.7.1 - Service Intelligence Reporting and Dashboards for Customers\r\n9.9 - Event Management"
+        },
+        {
+            "High Level Description": "Deliverables:  Security Incident/Posture Affecting Alerts, Incident/Posture Based Actions, Monthly Security Posture Summary Report"
+        },
+        {
+            "High Level Description": "Estimate: Build: 140 Hours, Per Instance Average:  32 Hours"
+        },
+        {
+            "Service": "Disaster Recovery (DR) Implementation Service (AWSMSP-280)"
+        },
+        {
+            "undefined": "G.8.1",
+            "Service": "DR Architecture Service (AWSMSP-281)",
+            "High Level Description": "This service will develop a customer specific AWS Disaster Recovery architecture and Analysis of Alternatives (AoA) document based on a brief discovery and requirements gathering workshop.  This document can be used as input into the DR Implementation Service",
+            "What will be built": "1.  Develop Parameters that the customer can select from when requesting this service\r\n2.  Develop DR Devlivery models this service will focus architectures around based on key patterns.\r\n3.  Develop Disaster Recovery Architecture Template\r\n4.  Develop AoA document Template",
+            "3rd Party Tools Requirement": "N/A",
+            "MSP Checklist Reference": "6.1 - Solution Capabilities",
+            "AWS Trainings": "• Well Architected Framework"
+        },
+        {
+            "High Level Description": "Deliverables:  Disaster Recovery Architecture, Analysis of Alternatives (AoA) document"
+        },
+        {
+            "High Level Description": "Estimate: Build: 40 Hours, Per Instance Average:  27 Hours"
+        },
+        {
+            "undefined": "G.8.2",
+            "Service": "DR Implementation Service (AWSMSP-282)",
+            "High Level Description": "This service will use the Disaster Recovery Architecture from the DR Architecture Service to configure DR for the customer, test the DR and prepare a Test and Configuration report for the customer.",
+            "What will be built": "1.  Develop DR Devlivery models this service will focus architectures around based on key patterns.\r\n2.  Develop DR Test Report Template\r\n3.  Develop DR Configuration Summary Template\r\n4.  Develop Sales Demo's",
+            "3rd Party Tools Requirement": "1.  AWS Native DR Supporting Services (AWS Storage Gateway, S3 Backup/Versioning, etc)\r\n2.  Consider a 3rd Party",
+            "MSP Checklist Reference": "6.1 - Solution Capabilities"
+        },
+        {
+            "High Level Description": "Deliverables:  Operating Disaster Recovery Configuration, DR Test Report, DR Configuration Summary Report"
+        },
+        {
+            "High Level Description": "Estimate: Build: 80 Hours, Per Instance Average:  36 Hours"
+        },
+        {
+            "undefined": "G.8.3",
+            "Service": "On-Premise Database Disaster Recovery (AWSMSP-283)",
+            "High Level Description": "This service will design and implement a DR solution for the customers On-Premise Database Management System.  The initial offering will support DR for Oracle, SQL Server and MySQL DBMS's.  This is NOT a migration service.  This service is standing up replication to a cloud hosted standby database server.",
+            "What will be built": "1.  Develop DB DR Devlivery models this service will focus architectures around based on key patterns.\r\n2.  Develop Sales Demo's\r\n",
+            "3rd Party Tools Requirement": "N/A",
+            "MSP Checklist Reference": "6.1 - Solution Capabilities",
+            "AWS Trainings": "• Migrating Oracle workloads"
+        },
+        {
+            "High Level Description": "Deliverables:  Operating DB DR Configuration, DR Test Report, DR Configuration Summary Report"
+        },
+        {
+            "High Level Description": "Estimate: Build: 80 Hours, Per Instance Average:  36 Hours"
+        },
+        {
+            "Service": "AWS Certification Program Service (AWSMSP-284)"
+        },
+        {
+            "undefined": "G.9.1",
+            "Service": "Customer AWS Certification Program (AWSMSP-285)",
+            "High Level Description": "Much like how Unisys will be estalishing our own AWS expertise, we will offer our customers the same AWS Certification Training program to enable their own staff to gain the expertise to deliver their own AWS services and provide their own AWS expertise longer term",
+            "What will be built": "1.  Develop Parameters that the customer can select from when requesting this service\r\n2.  Develop a Training plan that can be tailored to our customers\r\n3.  Develop Monthly Training and Certification Summary template\r\n4.  Create report email notification template",
+            "3rd Party Tools Requirement": "1. Unisys AWS Certification Program (Kathleen Young)\r\n2. aCloudGuru\r\n3. Linux Academy",
+            "MSP Checklist Reference": "N/A"
+        },
+        {
+            "High Level Description": "Deliverables:  Certification Training Plan Implementation, AWS Certification Training Plan, Monthly Training and Certification Summary Report"
+        },
+        {
+            "High Level Description": "Estimate: Build: 80 Hours, Per Instance Average:  85 Hours"
+        },
+        {
+            "Service": "AWS Big Data Platform as a Service (BDPaas) - Future Phase"
+        },
+        {
+            "undefined": "G.10.1",
+            "Service": "BDPaas",
+            "High Level Description": "A set of services around providing rapid access to Unisys supported or customer specific Big Data operating platforms, that will enable Unisys or customer data scientists to rapidly build models and analyze data to support your mission.",
+            "What will be built": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "3rd Party Tools Requirement": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "MSP Checklist Reference": "N/A",
+            "AWS Trainings": "• AWS Native Big Data and Analytics Introduction"
+        },
+        {
+            "High Level Description": "Deliverables:  "
+        },
+        {
+            "High Level Description": "Estimate: Build: XX Hours, Per Instance Average:  XX Hours"
+        },
+        {
+            "Service": "AWS Native Services Pilot - Future Phase"
+        },
+        {
+            "undefined": "G.11.1",
+            "Service": "AWS Native Service Pilot",
+            "High Level Description": "A service designed to help customers experience the use of one or more AWS native services in their own use case context.  Unisys will work with the customer to stand up a pilot to show value very quickly and facilitate larger use or enterprise decisions.",
+            "What will be built": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "3rd Party Tools Requirement": "1.  AWS Services",
+            "MSP Checklist Reference": "N/A",
+            "AWS Trainings": "• Intro to Serverless\r\n• Microservices/containers on AWS"
+        },
+        {
+            "High Level Description": "Deliverables:  "
+        },
+        {
+            "High Level Description": "Estimate: Build: XX Hours, Per Instance Average:  XX Hours"
+        },
+        {
+            "Service": "Enterprise Operations Integration Service - Future Phase"
+        },
+        {
+            "undefined": "G.12.1",
+            "Service": "Probably Deprecate",
+            "High Level Description": "A service that will assist large enterprises with the integration of the Unisys AWS MSP platform with their enterprise operational systems.",
+            "What will be built": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "3rd Party Tools Requirement": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "MSP Checklist Reference": "N/A"
+        },
+        {
+            "High Level Description": "Deliverables:  "
+        },
+        {
+            "High Level Description": "Estimate: Build: XX Hours, Per Instance Average:  XX Hours"
+        },
+        {
+            "Service": "Log Analytics and Visualization Service - Future Phase"
+        },
+        {
+            "undefined": "G.13.1",
+            "Service": "Log Search and Visualization",
+            "High Level Description": "Extension of the Log Aggregation Repository service in the Core services, this services sets up a AWS ElasticSearch cluster, ingests the log data and enables search and visualization of these log data for analytics purposes.  AWS Athena is also a possibility for non GovCloud customers.",
+            "What will be built": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "3rd Party Tools Requirement": "1.  AWS ElasticSearch, Kibana, Lambda ",
+            "MSP Checklist Reference": "9.6 - Next Generation Monitoring Capabilities",
+            "AWS Trainings": "• AWS Native Big Data and Analytics Introduction"
+        },
+        {
+            "High Level Description": "Deliverables:  "
+        },
+        {
+            "High Level Description": "Estimate: Build: XX Hours, Per Instance Average:  XX Hours"
+        },
+        {
+            "Service": "Data Migration Services - Future Phase"
+        },
+        {
+            "undefined": "G.14.1",
+            "High Level Description": "A set of services that will accelerate the migration of customer’s data into their AWS environment, securely, reliably and using both AWS native and 3rd party tools based on the customer’s data migration requirements.",
+            "What will be built": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "3rd Party Tools Requirement": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "MSP Checklist Reference": "7.1 - Infrastructure Migration Capabilities Leveraging AWS Best Practices\r\n7.2 - Application Migration Capabilities",
+            "AWS Trainings": "• Migrating Oracle workloads"
+        },
+        {
+            "High Level Description": "Deliverables:  "
+        },
+        {
+            "High Level Description": "Estimate: Build: XX Hours, Per Instance Average:  XX Hours"
+        },
+        {
+            "Service": "Platinum Services - Many Individual Advisory Services"
+        },
+        {
+            "Service": "Cost Model",
+            "undefined": "Time and Materials based on detailed quote provided to the customer"
+        },
+        {
+            "Service": "Description",
+            "undefined": "These Advisory services are designed to enable our AWS experts help customers solve the truly challenging problems in "
+        },
+        {
+            "Service": "Service",
+            "High Level Description": "High Level Description",
+            "What will be built": "What will be built",
+            "3rd Party Tools Requirement": "3rd Party Tools Requirement"
+        },
+        {
+            "Service": "Enterprise Cloud Strategy"
+        },
+        {
+            "undefined": "P.1.1",
+            "High Level Description": "Understanding that Cloud is a part of most enterprise's overall IT strategy, this advisory service will assist customers with the development of an Enterprise Cloud Strategy that will complement their overall IT strategy.",
+            "What will be built": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "3rd Party Tools Requirement": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "MSP Checklist Reference": "N/A",
+            "AWS Trainings": "• Cloud Adoption Framework\r\n• Well Architected Framework"
+        },
+        {
+            "High Level Description": "Deliverables:  "
+        },
+        {
+            "High Level Description": "Estimate: "
+        },
+        {
+            "Service": "White Glove Application Migration Service - Future Phase"
+        },
+        {
+            "undefined": "P.2.1",
+            "Service": "B. COBOL Rebuild Migration Pattern",
+            "High Level Description": "A service that will deeply assess the customer’s COBOL based application, provide them with an exhaustive application model and define the required set of application treatments required to operate this application in AWS.",
+            "What will be built": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "3rd Party Tools Requirement": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "MSP Checklist Reference": "7.1 - Infrastructure Migration Capabilities Leveraging AWS Best Practices\r\n7.2 - Application Migration Capabilities"
+        },
+        {
+            "High Level Description": "Deliverables:  "
+        },
+        {
+            "High Level Description": "Estimate: Build: XX Hours, Per Instance Average:  XX Hours"
+        },
+        {
+            "undefined": "P.2.2",
+            "Service": "C. Solaris to Linux Migration Pattern",
+            "High Level Description": "A service that will utilize Unisys’s current process of migrating applications from Solaris based operation environments to a Linux based operational environment in AWS.",
+            "What will be built": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "3rd Party Tools Requirement": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "MSP Checklist Reference": "7.1 - Infrastructure Migration Capabilities Leveraging AWS Best Practices\r\n7.2 - Application Migration Capabilities"
+        },
+        {
+            "High Level Description": "Deliverables:  "
+        },
+        {
+            "High Level Description": "Estimate: Build: XX Hours, Per Instance Average:  XX Hours"
+        },
+        {
+            "undefined": "P.2.3",
+            "Service": "D. zOS to Linux Migration Pattern",
+            "High Level Description": "A service that will utilize Unisys’s current process of migrating applications from IBM’s zOS based operation environments to a Linux based operational environment in AWS.",
+            "What will be built": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "3rd Party Tools Requirement": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "MSP Checklist Reference": "7.1 - Infrastructure Migration Capabilities Leveraging AWS Best Practices\r\n7.2 - Application Migration Capabilities"
+        },
+        {
+            "High Level Description": "Deliverables:  "
+        },
+        {
+            "High Level Description": "Estimate: Build: XX Hours, Per Instance Average:  XX Hours"
+        },
+        {
+            "undefined": "P.2.4",
+            "Service": "E. AIX to Linux Migration Pattern",
+            "High Level Description": "A service that will utilize Unisys’s current process of migrating applications from IBM’s AIX based operation environments to a Linux based operational environment in AWS.",
+            "What will be built": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "3rd Party Tools Requirement": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "MSP Checklist Reference": "7.1 - Infrastructure Migration Capabilities Leveraging AWS Best Practices\r\n7.2 - Application Migration Capabilities"
+        },
+        {
+            "High Level Description": "Deliverables:  "
+        },
+        {
+            "High Level Description": "Estimate: Build: XX Hours, Per Instance Average:  XX Hours"
+        },
+        {
+            "undefined": "P.2.5",
+            "Service": "F. Oracle Legacy Migration Pattern",
+            "High Level Description": "A service that will utilize Unisys’s current process and pattern to migration the customer from Oracle legacy software (DBMS, Web/Application Software, etc.) to alternative software solutions running in AWS.",
+            "What will be built": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "3rd Party Tools Requirement": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "MSP Checklist Reference": "7.1 - Infrastructure Migration Capabilities Leveraging AWS Best Practices\r\n7.2 - Application Migration Capabilities",
+            "AWS Trainings": "• Migrating Oracle workloads"
+        },
+        {
+            "High Level Description": "Deliverables:  "
+        },
+        {
+            "High Level Description": "Estimate: Build: XX Hours, Per Instance Average:  XX Hours"
+        },
+        {
+            "Service": "White Glove Application Accreditaion Service - Future Phase"
+        },
+        {
+            "undefined": "Notes from demo - 10-17 - Have an AWS offering - Continuous validation of controls within AWS infrastructure - \r\n\r\nOngoing authorization\r\n\r\ndefault on NIST of support others.\r\n\r\nContinuum - continuous assessment - OS level and above - map against controls.\r\n\r\n60% of that cannot be automated - policy and interview based - CCM - Open checklist interactive languate (OCIL).  workflow management - survey\r\n\r\nOpen Control and YAML in DevOps pipelines",
+            "Service": "FedRAMP Package Generation - Possibly a bit of a reach",
+            "High Level Description": "Assist the customer with the generation of a FedRAMP authorization package to start the authorization process.  This service also includes support during the process, to include meeting support, documentation updates and project management of the process.",
+            "What will be built": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "3rd Party Tools Requirement": "1.  Telos - Xacta\r\n2.  xxx\r\n3.  xxx",
+            "MSP Checklist Reference": "N/A"
+        },
+        {
+            "High Level Description": "Deliverables:  "
+        },
+        {
+            "High Level Description": "Estimate: Build: XX Hours, Per Instance Average:  XX Hours"
+        },
+        {
+            "undefined": "P.3.2",
+            "Service": "Customer ATO/A&A Accreditation",
+            "High Level Description": "This service includes an in-depth analysis of your current authorization process, an effort to document your application based on this process and the support of your application as it goes through the process to ATO or A&A attainment.  This service also includes support during the process, to include meeting support, documentation updates and project management of the process.",
+            "What will be built": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "3rd Party Tools Requirement": "1.  Telos - Xacta\r\n2.  xxx\r\n3.  xxx",
+            "MSP Checklist Reference": "N/A"
+        },
+        {
+            "High Level Description": "Deliverables:  "
+        },
+        {
+            "High Level Description": "Estimate: Build: XX Hours, Per Instance Average:  XX Hours"
+        },
+        {
+            "Service": "Microservices / Serverless Architecture  Service - Future Phase"
+        },
+        {
+            "undefined": "P.4.1",
+            "Service": "Microservices/Serverless Architecture Service",
+            "High Level Description": "A set of advisory services that will assist our customers with the move from traditional application architecture to micro-services and server-less based architectures.   ",
+            "What will be built": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "3rd Party Tools Requirement": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "MSP Checklist Reference": "6.1 - Solution Capabilities",
+            "AWS Trainings": "• Intro to Serverless\r\n• Microservices/containers on AWS"
+        },
+        {
+            "High Level Description": "Deliverables:  "
+        },
+        {
+            "High Level Description": "Estimate: Build: XX Hours, Per Instance Average:  XX Hours"
+        },
+        {
+            "undefined": "P.4.2",
+            "Service": "Microservices/Serverless Implementation Service",
+            "What will be built": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "3rd Party Tools Requirement": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "MSP Checklist Reference": "6.1 - Solution Capabilities",
+            "AWS Trainings": "• Intro to Serverless\r\n• Microservices/containers on AWS"
+        },
+        {
+            "High Level Description": "Deliverables:  "
+        },
+        {
+            "High Level Description": "Estimate: Build: XX Hours, Per Instance Average:  XX Hours"
+        },
+        {
+            "Service": "Cloud Native Development Services - Future Phase"
+        },
+        {
+            "undefined": "P.5.1",
+            "High Level Description": "A set of advisory services designed to educate, assist with the design of and optimize AWS Cloud natively developed applications that optimize the benefits of cost, scalability, performance and reliability realized in enterprise cloud native applications.",
+            "What will be built": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "3rd Party Tools Requirement": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "MSP Checklist Reference": "6.1 - Solution Capabilities",
+            "AWS Trainings": "• Intro to Serverless\r\n• Microservices/containers on AWS"
+        },
+        {
+            "High Level Description": "Deliverables:  "
+        },
+        {
+            "High Level Description": "Estimate: Build: XX Hours, Per Instance Average:  XX Hours"
+        },
+        {
+            "Service": "High Availability (HA) Assessment Service - Future Phase"
+        },
+        {
+            "undefined": "P.6.1",
+            "Service": "HA Architecture Service",
+            "High Level Description": "A set of advisory services that support the assessment, re-architecture and implementation of applications that require the highest level of availability the AWS platform can offer.",
+            "What will be built": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "3rd Party Tools Requirement": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "MSP Checklist Reference": "N/A",
+            "AWS Trainings": "• Well Architected Framework"
+        },
+        {
+            "High Level Description": "Deliverables:  "
+        },
+        {
+            "High Level Description": "Estimate: Build: XX Hours, Per Instance Average:  XX Hours"
+        },
+        {
+            "undefined": "P.6.2",
+            "Service": "HA Implementation Service",
+            "What will be built": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "3rd Party Tools Requirement": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "MSP Checklist Reference": "N/A",
+            "AWS Trainings": "• Well Architected Framework"
+        },
+        {
+            "High Level Description": "Deliverables:  "
+        },
+        {
+            "High Level Description": "Estimate: Build: XX Hours, Per Instance Average:  XX Hours"
+        },
+        {
+            "Service": "Enterprise Scale Performance Assessment - Future Phase"
+        },
+        {
+            "undefined": "P.7.1",
+            "High Level Description": "A service that will assess the performance of your application at your enterprise’s true scale, in your environment using purpose built tools that will help you prove your applications design to scale effectiveness.",
+            "What will be built": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "3rd Party Tools Requirement": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "MSP Checklist Reference": "N/A"
+        },
+        {
+            "High Level Description": "Deliverables:  "
+        },
+        {
+            "High Level Description": "Estimate: Build: XX Hours, Per Instance Average:  XX Hours"
+        },
+        {
+            "Service": "New AWS Service Injection / Strategy Services - Future Phase"
+        },
+        {
+            "undefined": "P.8.1",
+            "High Level Description": "As new services are continually added by AWS to their platform, this service will determine the best injection point of these new services into your suite of applications, what services you may consider deprecation, and create a plan and implement this new service injection.  ",
+            "What will be built": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "3rd Party Tools Requirement": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "MSP Checklist Reference": "N/A"
+        },
+        {
+            "High Level Description": "Deliverables:  "
+        },
+        {
+            "High Level Description": "Estimate: Build: XX Hours, Per Instance Average:  XX Hours"
+        },
+        {
+            "Service": "Big Data / Data Analytics Services - Future Phase"
+        },
+        {
+            "undefined": "P.9.1",
+            "High Level Description": "A complement to our BDPaaS service, this advisory service provides access to Unisys’s collection of expert data scientists to assist your organization with big data and problem modeling, query development and output data and information analytics to solve real world mission problems.",
+            "What will be built": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "3rd Party Tools Requirement": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "MSP Checklist Reference": "6.1 - Solution Capabilities",
+            "AWS Trainings": "• AWS Native Big Data and Analytics Introduction"
+        },
+        {
+            "High Level Description": "Deliverables:  "
+        },
+        {
+            "High Level Description": "Estimate: Build: XX Hours, Per Instance Average:  XX Hours"
+        },
+        {
+            "Service": "Organizational Change Management - Future Phase"
+        },
+        {
+            "undefined": "P.10.1",
+            "Service": "Strategic & Tactical Communications",
+            "High Level Description": "A service that will help with strategic and tactical communications to your user community that will help drive the message, foster understanding, and help empathetically ease the adoption and acceptance of the change to cloud.",
+            "What will be built": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "3rd Party Tools Requirement": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "MSP Checklist Reference": "N/A"
+        },
+        {
+            "High Level Description": "Deliverables:  "
+        },
+        {
+            "High Level Description": "Estimate: Build: XX Hours, Per Instance Average:  XX Hours"
+        },
+        {
+            "undefined": "P.10.2",
+            "Service": "Training & Enablement",
+            "High Level Description": "A service that will design an organization training plan focused on the customer’s organization to foster excitement of the possible and enable a greater understanding of how IT will operate in AWS.",
+            "What will be built": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "3rd Party Tools Requirement": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "MSP Checklist Reference": "N/A"
+        },
+        {
+            "High Level Description": "Deliverables:  "
+        },
+        {
+            "High Level Description": "Estimate: Build: XX Hours, Per Instance Average:  XX Hours"
+        },
+        {
+            "undefined": "P.10.3",
+            "Service": "Governance",
+            "High Level Description": "A service that will assess the customer’s current IT governance model, identify gaps or changes and make recommendations for changes to that governance model to enable is support and governance over the AWS environment. ",
+            "What will be built": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "3rd Party Tools Requirement": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "MSP Checklist Reference": "N/A"
+        },
+        {
+            "High Level Description": "Deliverables:  "
+        },
+        {
+            "High Level Description": "Estimate: Build: XX Hours, Per Instance Average:  XX Hours"
+        },
+        {
+            "Service": "Cyber / Biometric Identity Services - Future Phase"
+        },
+        {
+            "undefined": "P.11.1",
+            "High Level Description": "A set of services that provide the customer access to Unisys’s Cyber and Biometric Identity experts and patterns that we use today to deliver to our customers.  These services will include assessment, architectural and implementation support.",
+            "What will be built": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "3rd Party Tools Requirement": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "MSP Checklist Reference": "N/A"
+        },
+        {
+            "High Level Description": "Deliverables:  "
+        },
+        {
+            "High Level Description": "Estimate: Build: XX Hours, Per Instance Average:  XX Hours"
+        },
+        {
+            "Service": "High Performance Computing Services - Future Phase"
+        },
+        {
+            "undefined": "P.12.1",
+            "High Level Description": "A set of services that assist the customer with the establishment, implementation and use of AWS and Unisys high performance computing patterns in the customer’s AWS environment. ",
+            "What will be built": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "3rd Party Tools Requirement": "1.  xxx\r\n2.  xxx\r\n3.  xxx",
+            "MSP Checklist Reference": "N/A"
+        },
+        {
+            "High Level Description": "Deliverables:  "
+        },
+        {
+            "High Level Description": "Estimate: Build: XX Hours, Per Instance Average:  XX Hours"
+        }
+    ],
+    "WorkItems": [
+        {
+            "undefined": "Bronze Service - A Single Managed Service"
+        },
+        {
+            "undefined": "AWSMSP-14: AWS Account Setup",
+            "Automations": "AWSMSP-63: Oganization Creation - Alex",
+            "Documents": "AWSMSP-71: Account Setup Workflow - New Account - Scott",
+            "AWS Policies": "AWSMSP-78: AWS Organizations Policy - Scott"
+        },
+        {
+            "Automations": "AWSMSP-64: Account Creation: AWS New Account - AWS Organizations - Alex",
+            "Documents": "AWSMSP-72: Account Setup Workflow - Existing Account - Scott",
+            "AWS Policies": "AWSMSP-79: Customer Admin Policy - Scott"
+        },
+        {
+            "Automations": "AWSMSP-65: Account Linkage: AWS Existing Account",
+            "Documents": "AWSMSP-73: Account Setup Workflow - Not Transferring - Scott",
+            "AWS Policies": "AWSMSP-80: Unisys MSP Role Policy - Scott"
+        },
+        {
+            "Automations": "AWSMSP-66: Email Address Creation: AWS New Account",
+            "Documents": "AWSMSP-74: Unisys AWS Organizations Procedures - Scott"
+        },
+        {
+            "Automations": "AWSMSP-67: Configure Base Account: AWS New Account",
+            "Documents": "AWSMSP-75: Notification email template (MSP-CTE-B-00001)"
+        },
+        {
+            "Automations": "AWSMSP-68: Configure Base Account: AWS Existing Account",
+            "Documents": "AWSMSP-100: Account Removal Procedures (MSP-PRD-B-00002)"
+        },
+        {
+            "Automations": "AWSMSP-69: Remove Account: AWS New Account",
+            "Documents": "AWSMSP-76: AWS MSP Access Policy - Scott"
+        },
+        {
+            "Automations": "AWSMSP-70: Remove Account: AWS Existing Account",
+            "Documents": "AWSMSP-77: AWS MSP Tagging Policy - Scott"
+        },
+        {
+            "Automations": "Automated collection mechanism"
+        },
+        {
+            "undefined": "AWSMSP-16: Basic Billing",
+            "Automations": "AWSMSP-84: Add Account: CloudHealth - Alex",
+            "Documents": "AWSMSP-90: Billing Dashboard Training Document (MSP-GD-B-00003)",
+            "AWS Policies": "AWSMSP-92: CloudHealth Role Policy - Scott"
+        },
+        {
+            "Automations": "AWSMSP-85: Configure Permissions:  CloudHealth - Alex",
+            "Documents": "AWSMSP-91: AWS MSP Billing/Invoice Guide (MSP-GD-B-00004)",
+            "AWS Policies": "AWSMSP-93: Unisys Administration Roles Policies - Scott"
+        },
+        {
+            "Automations": "AWSMSP-86: Configure Permissions:  AWS Billing Console",
+            "AWS Policies": "AWSMSP-94: Customer Billing Access Policies - Scott"
+        },
+        {
+            "Automations": "AWSMSP-87: Configure Notifications: CloudHealth - Alex"
+        },
+        {
+            "Automations": "AWSMSP-88: Configure Reporting: CloudHealth - Alex"
+        },
+        {
+            "Automations": "AWSMSP-89: Remove Account: CloudHealth - Alex"
+        },
+        {
+            "undefined": "AWSMSP-17: Basic Metering",
+            "Automations": "AWSMSP-95: Configure Budgets: CloudHealth",
+            "Documents": "AWSMSP-97: Monthy Metering Report Template (MSP-CTR-B-00005)",
+            "AWS Policies": "AWSMSP-99: Budget Management Policy - Scott"
+        },
+        {
+            "Automations": "AWSMSP-96: Configure Budgets: AWS Billling Console",
+            "Documents": "AWSMSP-98: Email Notification Template (MSP-CTE-B-00006)"
+        },
+        {
+            "undefined": "AWSMSP-18: Basic Invoicing",
+            "Automations": "AWSMSP-101: Configure Invoicing:  CloudHealth",
+            "Documents": "AWSMSP-103: Monthly Invoice Template (MSP-CTE-B-00006)"
+        },
+        {
+            "Automations": "AWSMSP-102: Configure Unisys Custom Integration with CostPoint",
+            "Documents": "AWSMSP-104: Email Notification Template"
+        },
+        {
+            "Automations": "AWSMSP-106: Configure SQS/SWF for Invoice workflow",
+            "Documents": "AWSMSP-105: Inovice SQS/SWF Setup"
+        },
+        {
+            "undefined": "AWSMSP-20: Shared Partner Discounts",
+            "Automations": "AWSMSP-107: Configure Blended Rate: CloudHealth / CostPoint",
+            "Documents": "AWSMSP-109: Monthly Savings Document Template"
+        },
+        {
+            "Automations": "AWSMSP-108: Configure Blended Rate: Change Management SQS/SWF",
+            "Documents": "AWSMSP-110: Email Notification Template"
+        },
+        {
+            "undefined": "AWSMSP-21: Shared Tiered Discounts",
+            "Automations": "AWSMSP-107: Configure Blended Rate: CloudHealth / CostPoint"
+        },
+        {
+            "Automations": "AWSMSP-108: Configure Blended Rate: Change Management SQS/SWF"
+        },
+        {
+            "Automations": "Automations",
+            "Documents": "Documents",
+            "AWS Policies": "AWS Policies"
+        },
+        {
+            "undefined": "Silver Service - A Single Managed Service"
+        },
+        {
+            "undefined": "Customer Configuration Workshop",
+            "Documents": "Managed Services Agreement (MSA) - Scott / RJ"
+        },
+        {
+            "Documents": "Customer  Requirements Selection (CRS) document - Scott"
+        },
+        {
+            "Documents": "Customer Configuration Workshop slide deck - Scott"
+        },
+        {
+            "Documents": "Technical Account Manager CONOPs - Scott"
+        },
+        {
+            "Documents": "Unisys AWS Managed Services Statement of Work (SOW) Template - Scott"
+        },
+        {
+            "undefined": "Customer AWS Environment Setup",
+            "Automations": "Environment Setup: AWS Account",
+            "Documents": "TAM procedures for configuration of the automation script"
+        },
+        {
+            "Automations": "Automated Validation Utility"
+        },
+        {
+            "undefined": "Configured Customer Dashboard",
+            "Automations": "Configure CloudHealth Dashboard",
+            "Documents": "Dashboard Access Instructions"
+        },
+        {
+            "Documents": "Dashboard User Guide"
+        },
+        {
+            "undefined": "Customer AWS Service Catalog",
+            "Automations": "AWS Catalog Setup template",
+            "Documents": "Define Parameters for Automation Script",
+            "AWS Policies": "IAM Policy and Role restricting access to Catalog"
+        },
+        {
+            "Documents": "Develop Catalog skinning / customization guide"
+        },
+        {
+            "Documents": "Develop Dataflow diagram"
+        },
+        {
+            "Documents": "Develop Operational Procedures document"
+        },
+        {
+            "undefined": "Basic Workload OS Patching Service",
+            "Automations": "Automated SSM Configuration based on Tagging Policy",
+            "Documents": "OS Patching CONOPs document",
+            "AWS Policies": "IAM Policy for Services Admin (SSM)"
+        },
+        {
+            "Automations": "Patching Automation Process",
+            "Documents": "Monthy Workload Management Report Template"
+        },
+        {
+            "Documents": "Email Notification Template"
+        },
+        {
+            "Documents": "Workload Tagging Policy"
+        },
+        {
+            "Documents": "Define Parameters for Automation Script"
+        },
+        {
+            "undefined": "Basic Workload Application Patching Service",
+            "Automations": "Automated SSM Configuration based on EC2 Tags",
+            "Documents": "Application Patching CONOPs document",
+            "AWS Policies": "IAM Policy for Services Admin (SSM)"
+        },
+        {
+            "Automations": "Patching Automation Process",
+            "Documents": "Monthy Workload Management Report Template"
+        },
+        {
+            "Documents": "Email Notification Template"
+        },
+        {
+            "Documents": "Define Parameters for Automation Script"
+        },
+        {
+            "Documents": "Workload Tagging Policy"
+        },
+        {
+            "undefined": "EBS Volume Backup Service",
+            "Automations": "Backup process based on Volume Tags",
+            "Documents": "Volume Tiering Options"
+        },
+        {
+            "Documents": "Define Parameters for Automation Script"
+        },
+        {
+            "undefined": "EBS Volume Restoration Service",
+            "Automations": "Restoration based on Storage Tier (Automatic for select tiers)"
+        },
+        {
+            "undefined": "AWS S3 Bucket/Object Backup",
+            "Automations": "Backup process based on Object Tags"
+        },
+        {
+            "undefined": "AWS S3 Bucket/Object Restoration",
+            "Automations": "Restoration based on Storage Tier (Automatic for select tiers)"
+        },
+        {
+            "undefined": "Central Logging Repository"
+        },
+        {
+            "undefined": "Basic Network Monitoring Service"
+        },
+        {
+            "undefined": "Basic Security Monitoring Service"
+        },
+        {
+            "undefined": "Basic Performance Monitoring Service"
+        },
+        {
+            "undefined": "Monthly Performance Optimization Recommendation"
+        },
+        {
+            "undefined": "Monthly Financial Optimization Recommendation"
+        },
+        {
+            "undefined": "Notification Service"
+        },
+        {
+            "undefined": "Named Technical Account Manager"
+        },
+        {
+            "undefined": "Monthly AWS Service Presentation"
+        },
+        {
+            "undefined": "AWS Service Wiki "
+        },
+        {
+            "undefined": "Core Service Desk"
+        },
+        {
+            "undefined": "Incident Management"
+        },
+        {
+            "undefined": "Gold Services - Many Individual Volume Based Services"
+        },
+        {
+            "undefined": "Application Discovery Service"
+        },
+        {
+            "undefined": "A. Lift & Shift Migration Pattern"
+        },
+        {
+            "undefined": "Application Operations Migration"
+        },
+        {
+            "undefined": "Migration Validation & Delivery"
+        },
+        {
+            "undefined": "Single Application Migration Planning"
+        },
+        {
+            "undefined": "Application Portfolio Migration Planning"
+        },
+        {
+            "undefined": "Single Application Performance Assessment (1-Hour, 1-Day, 7-Day, 1 Month, 6 Months, 1 Year)"
+        },
+        {
+            "undefined": "IdAM Integration"
+        },
+        {
+            "undefined": "On-Premise Storage Integration"
+        },
+        {
+            "undefined": "External Network Connection"
+        },
+        {
+            "undefined": "TIC/MTIPS Connection"
+        },
+        {
+            "undefined": "Configure DevOps Team Collaboration Suite"
+        },
+        {
+            "undefined": "Configure AWS Native DevOps Pipeline"
+        },
+        {
+            "undefined": "Configure Open Source Java Application DevOps Pipeline"
+        },
+        {
+            "undefined": "Configure .Net Application DevOps Pipeline"
+        },
+        {
+            "undefined": "Configure Open Source Angular.js Application DevOps Pipeline"
+        },
+        {
+            "undefined": "Configure Custom Customer Selected DevOps Pipeline"
+        },
+        {
+            "undefined": "RMF Assessment & Authorization  Service"
+        },
+        {
+            "undefined": "CDM ATO Service"
+        },
+        {
+            "undefined": "Advanced Network Monitoring Service"
+        },
+        {
+            "undefined": "Advanced Security Monitoring Service"
+        },
+        {
+            "undefined": "DR Architecture Service"
+        },
+        {
+            "undefined": "DR Implementation Service"
+        },
+        {
+            "undefined": "On-Premise Database Disaster Recovery"
+        },
+        {
+            "undefined": "Customer AWS Certification Program"
+        }
+    ],
+    "MSP Documents": [
+        {
+            "undefined": "Document Name"
+        },
+        {
+            "undefined": "Bronze Shared Responsibility Model"
+        },
+        {
+            "undefined": "Managed Services Agreement (MSA)"
+        },
+        {
+            "undefined": "Account Setup Email Template"
+        },
+        {
+            "undefined": "Minimum required information required: Bronze"
+        },
+        {
+            "undefined": "AWS MSP Access Policy - Bronze"
+        },
+        {
+            "undefined": "Bronze Operational Procedures"
+        },
+        {
+            "undefined": "Account Removal Procedures"
+        },
+        {
+            "undefined": "Account Setup Workflow - New Account"
+        },
+        {
+            "undefined": "Account Setup Workflow - Transferring Account"
+        },
+        {
+            "undefined": "Setup Workflow - Non Transferring"
+        },
+        {
+            "undefined": "Customer On-Boarding Process"
+        },
+        {
+            "undefined": "Billing Dashboard Training Document"
+        },
+        {
+            "undefined": "Work with James Ball to Change process to use Cloudhealth Customer DBR"
+        },
+        {
+            "undefined": "Full Billing process start to MSP finish"
+        },
+        {
+            "undefined": "Customer Billing Discovery Process"
+        },
+        {
+            "undefined": "Monthy Metering Report Template"
+        },
+        {
+            "undefined": "Email Notification Template"
+        },
+        {
+            "undefined": "Monthly Invoice Template"
+        },
+        {
+            "undefined": "Email Notification Template"
+        },
+        {
+            "undefined": "Customer Invoicing Process"
+        },
+        {
+            "undefined": "Invoicing process for CFPB"
+        },
+        {
+            "undefined": "AWS MSP Invoice Workflow Document"
+        },
+        {
+            "undefined": "Monthly Savings Document Template"
+        },
+        {
+            "undefined": "Email Notification Template"
+        },
+        {
+            "undefined": "Bronze Rate Card"
+        },
+        {
+            "undefined": "On-boarding Engagement Workshop Deck Template"
+        },
+        {
+            "undefined": "MSP---00027"
+        },
+        {
+            "undefined": "MSP---00028"
+        },
+        {
+            "undefined": "MSP---00029"
+        },
+        {
+            "undefined": "MSP---00030"
+        },
+        {
+            "undefined": "MSP---00031"
+        },
+        {
+            "undefined": "MSP---00032"
+        },
+        {
+            "undefined": "MSP---00033"
+        },
+        {
+            "undefined": "100"
+        },
+        {
+            "undefined": "Silver Shared Responsibility Model"
+        },
+        {
+            "undefined": "Managed Services Agreement (MSA) - Scott / RJ"
+        },
+        {
+            "undefined": "Customer  Requirements Selection (CRS) document - Scott"
+        },
+        {
+            "undefined": "Customer Configuration Workshop slide deck - Scott"
+        },
+        {
+            "undefined": "Technical Account Manager CONOPs - Scott"
+        },
+        {
+            "undefined": "Minimum required information required: Bronze"
+        },
+        {
+            "undefined": "MSP Statement of Work (SOW) Template - Scott"
+        },
+        {
+            "undefined": "Prepare customer document package"
+        },
+        {
+            "undefined": "AWS MSP Access Policy - Silver"
+        },
+        {
+            "undefined": "Dashboard Access Instructions"
+        },
+        {
+            "undefined": "Dashboard User Guide"
+        },
+        {
+            "undefined": "How to create / manage services within Service Catalog"
+        },
+        {
+            "undefined": "Develop Catalog skinning / customization guide"
+        },
+        {
+            "undefined": "Develop Dataflow diagram"
+        },
+        {
+            "undefined": "Monthy Workload Management Report Template"
+        },
+        {
+            "undefined": "Email Notification Template"
+        },
+        {
+            "undefined": "OS Patching Communications plan per CRS"
+        },
+        {
+            "undefined": "Workload Tagging Policy"
+        },
+        {
+            "undefined": "Monthly Backup Status Report Template"
+        },
+        {
+            "undefined": "Email Notification Template"
+        },
+        {
+            "undefined": "Storage Tiering Tagging Policy"
+        },
+        {
+            "undefined": "Monthly Basic Monitoring Report Template"
+        },
+        {
+            "undefined": "Email Notification Template"
+        },
+        {
+            "undefined": "Cloud Manager Governance Policy"
+        },
+        {
+            "undefined": "AWS Supplemental Governance Policy"
+        },
+        {
+            "undefined": "Performance Monitoring Policy"
+        },
+        {
+            "undefined": "Monthly Customer AWS Recommendation Report"
+        },
+        {
+            "undefined": "Email Notification Template"
+        },
+        {
+            "undefined": "Monthly Notification Summary Report"
+        },
+        {
+            "undefined": "Email Notification Template"
+        },
+        {
+            "undefined": "MSP Notification Services Design"
+        },
+        {
+            "undefined": "TAM Role Definition"
+        },
+        {
+            "undefined": "TAM Job Description"
+        },
+        {
+            "undefined": "TAM SLAs"
+        },
+        {
+            "undefined": "TAM Customer Engagement CONOPS"
+        },
+        {
+            "undefined": "TAM Training Plan"
+        },
+        {
+            "undefined": "Stock presentation slide deck"
+        },
+        {
+            "undefined": "presentation for each of the AWS services"
+        },
+        {
+            "undefined": "Access policy for these presentations"
+        },
+        {
+            "undefined": "version control process for these presentations"
+        },
+        {
+            "undefined": "user guide for the AWS Services Wiki"
+        },
+        {
+            "undefined": "Monthly Service Desk Report Template"
+        },
+        {
+            "undefined": "Email Notification Template"
+        },
+        {
+            "undefined": "Service Desk Engagement model"
+        },
+        {
+            "undefined": "Service Desk Requirements"
+        },
+        {
+            "undefined": "Monthly Incident Report Template"
+        },
+        {
+            "undefined": "Email Notification Template"
+        },
+        {
+            "undefined": "Monthly Asset Management Report"
+        },
+        {
+            "undefined": "Email Notification Template"
+        },
+        {
+            "undefined": "Asset Tagging Policy"
+        },
+        {
+            "undefined": "Silver Rate Card"
+        },
+        {
+            "undefined": "MSP---00152"
+        },
+        {
+            "undefined": "MSP---00153"
+        },
+        {
+            "undefined": "MSP---00154"
+        },
+        {
+            "undefined": "MSP---00155"
+        },
+        {
+            "undefined": "MSP---00156"
+        },
+        {
+            "undefined": "500"
+        },
+        {
+            "undefined": "MSP--G-00501"
+        },
+        {
+            "undefined": "MSP---00502"
+        },
+        {
+            "undefined": "MSP---00503"
+        },
+        {
+            "undefined": "MSP---00504"
+        },
+        {
+            "undefined": "MSP---00505"
+        },
+        {
+            "undefined": "MSP---00506"
+        },
+        {
+            "undefined": "MSP---00507"
+        },
+        {
+            "undefined": "MSP---00508"
+        },
+        {
+            "undefined": "MSP---00509"
+        },
+        {
+            "undefined": "MSP---00510"
+        },
+        {
+            "undefined": "MSP---00511"
+        },
+        {
+            "undefined": "MSP---00512"
+        },
+        {
+            "undefined": "1000"
+        },
+        {
+            "undefined": "AWS MSP System Monitoring Process"
+        },
+        {
+            "undefined": "AWS MSP Disaster Recovery Plan"
+        },
+        {
+            "undefined": "Bronze Project Plan"
+        },
+        {
+            "undefined": "Silver Project Plan"
+        },
+        {
+            "undefined": "MSP Release Management Process"
+        },
+        {
+            "undefined": "MSP Document Standard"
+        },
+        {
+            "undefined": "MSP Email Template Standard"
+        },
+        {
+            "undefined": "MSP Shared Responsibility Model"
+        },
+        {
+            "undefined": "MSP Processes Workflow"
+        },
+        {
+            "undefined": "MSP---01010"
+        },
+        {
+            "undefined": "MSP---01011"
+        },
+        {
+            "undefined": "MSP---01012"
+        },
+        {
+            "undefined": "MSP---01013"
+        }
+    ]
+}
