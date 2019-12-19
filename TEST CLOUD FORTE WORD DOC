@@ -1,0 +1,220 @@
+`
+
+
+
+
+
+
+
+
+
+CloudForte™ Capability Description 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+June 11, 2018
+
+
+
+ 
+TABLE OF CONTENTS
+Unisys CloudForteTM   Offering	2
+The Unisys Cloud Center of Enablement (CCoE)	5
+Unisys CloudForteTM   Cloud Migration Services (Overview)	6
+Unisys CloudForteTM   General Pricing Information	8
+Unisys MSP Relationships	12
+
+
+ 
+UNISYS CLOUDFORTETM   OFFERING
+In anticipation of the growing demand on the part of federal customers seeking to adopt cloud services at faster rates, and in recognition of the challenges facing federal cloud adoption, Unisys has developed its CloudForteTM solution that provides federal agencies, at any stage of their cloud journey, the ability to leverage Amazon Web Services (AWS) native services along with tailored professional services from Unisys that help them realize the full potential of being cloud–first. Based in large part on Unisys’ history of firsts in government cloud implementations, CloudForteTM is a Next-Gen MSP solution that uniquely positions Unisys to assist our clients with their cloud journey in a highly secure, compliant and innovative fashion.
+As illustrated in Figure 1, CloudForteTM provides a multi-tiered AWS-optimized managed services platform that enables our clients to incorporate the benefits of a custom services engagement while yielding the economic and consistent benefits of a managed service. CloudForteTM includes both subscription-based platform services (Consume and Command) and expert professional services (Accelerate and Transform). Each service bundle contains features that are tailored to your agency’s unique requirements, and that enable individual consumption with no dependencies on other service bundles. If, for example, your agency has already established a reseller agreement and would benefit from the automated governance and real-time compliance of the Command bundle, we can work with your current reseller to implement a model that works for you.
+ 
+Figure 1- Unisys CloudForteTM includes both subscription-based platform services (Consume and Command) and expert professional services (Accelerate and Transform)
+CloudForteTM also provides for multiple potential entry points into a client’s journey to the cloud, dependent upon your unique combination of mission, technical and economic requirements, and level of cloud maturity. Further, as requirements and/or maturity levels inevitably change, CloudForteTM will support your associated changing needs. For example, some clients may require enhanced AWS consumption services during the early stages of their journey, and evolve to the point where they require more accelerated and transformative services as their cloud maturity increases.
+All subscription-based platform services (Consume and Command) are Amazon-native and highly automated, and serve to accelerate cloud adoption consistent with your requirements related to governance and compliance. Our Consume service offers clients an extremely light touch, self-service AWS Account where, through our AWS partnership, Unisys can share in our discount with our clients. This service is optimal for clients’ research, sandbox or development environments where experimentation and development is the primary goal and where the cost of structure and compliance can be relaxed. This service encompasses an Account Setup service and a basic Billing, Cost Metering and Invoicing service.
+Our Command service leverages a Unisys managed AWS Account in which, through custom, parameter-driven automation, we overlay key management, monitoring and security services that will provide our clients the oversight and visibility of their AWS environment that is required by most operations teams.  Development teams still retain direct access to all the traditional AWS interfaces (Management Console, Application Program Interface (API) and Command Line Interface (CLI)), and we supplement those interfaces through access to standard and customer-built AWS service templates. This enables clients to allow direct access for certain users while limiting access for others to an approved AWS service catalog. As part of the Command service, each client also receives access to a Unisys Technical Account Manager (TAM), who, as an AWS Certified engineer, possesses both AWS and MSP Platform knowledge and who collaborates closely with both the Unisys Cloud Center of Enablement (CCoE) and Unisys’ AWS Solutions Architect that is provided through our AWS partnership. The Command service encompasses all services provided through our Consume service, as well as those presented in Figure 2.
+
+Service	Description
+Technical Account Manager (TAM)	Each client is assigned a named Technical Account Manager (TAM). The TAM is a Unisys AWS certified architect/engineer that serves as the primary human interface for your Unisys AWS Managed Services engagement.
+AWS Account Setup / Configuration	The Unisys TAM works with you to complete the Customer Requirements Selection (CRS) document that subsequently serves as input to the account setup automation templates that the TAM will execute to configure your AWS Account.
+Cloud Service Catalog	Unisys will set up an AWS Service Catalog for you, and will assist in creating the first service on that catalog. This service can then be offered to other users without them requiring access to the AWS interfaces (Management Console, API or CLI).
+Basic Workload Management	The Unisys TAM works with your project teams to configure your instances to support EC2 Systems Manager on supported Windows and Linux instances types. The TAM will then work with operations teams to identify, recommend, receive approval for and apply OS patches to the running instances, and to establish a more ephemeral patching strategy.
+Workload Backup and Restoration	As part of account setup, the TAM will provide recommended storage tiering options, and, upon agreement, will set up the tiering automation, and provide procedures to assure that your storage (EBS, S3) is automatically configured correctly upon creation so as to provide backup for your storage objects. The TAM will also assist with restoration of data as required, and will provide self-service restoration instructions as well.
+Log Aggregation Repository	This service will automatically create a central logging repository, automatically configure AWS CloudWatch Logs on the repository, and create meaningful alerts and notifications against this logging repository.
+Network / Security / Performance Monitoring	Unisys will provide a basic network and security monitoring service that uses AWS native monitoring capabilities. The TAM will work with you to define and create meaningful alerts and notifications based on your network, security and performance monitoring requirements.
+Monthly Financial / Performance / SLA Optimization	On a monthly basis, our TAM will collect and assess a detailed summation of the network, security and performance monitoring reports. The TAM will also review the monthly customer billing report. The TAM will then prepare a monthly customer recommendations report with recommended optimizations from a performance and financial optimization perspective.
+Notification Service	This service automates the creation and configuration of secure communication mechanisms (e.g., emails, alerts and SMS messages) to the customer. The TAM will configure these mechanisms, and set up the automated integration of the other services that require notifications.
+AWS Service Expertise (Wiki, Presentations, CCoE)	Unisys will provide you access to our AWS Services Wiki with links to AWS published content as well as links to content that is made available through our Unisys Cloud Center of Enablement (CCoE). Our TAM will also conduct periodic interactive presentations of AWS services that are relevant and valuable for you.
+Service Desk	Unisys will provide support for our platform via a 24/7 service desk for basic level support, and access to our TAM and organizational reach-back during core business hours.
+Incident Management	Our service desk will provide incident management services for all support incidents. Our TAM will also register incidents within our service desk system.
+Asset Management	This service will provide complete visibility into all of the assets that are configured and operational within your account.  
+Change and Configuration Management	Unisys will work with you to define your configuration management requirements, and will subsequently configure your platform’s CMDB to serve as the configuration management source of record for your account.
+CloudForteTM Command service provides key management, monitoring and security services that will provide our clients the oversight and visibility of their AWS environment that is required by most operations teams
+As agencies move up the cloud value curve, Unisys CloudForteTM offers higher-level Acceleration and Transformation services that enable clients to leverage the full potential of the AWS catalog of services. Our MSP Accelerate services leverage our AWS delivery experience to develop repeatable, consistent and reliable delivery patterns that address our clients’ more significant challenges associated with migrating and/or operating applications on the AWS platform. Our TAM collaborates with your application teams to determine the appropriate Accelerate services to address your unique combination of requirements.
+Similarly, our Transform services are advisory services that require our TAM to work with your team to gather specific detailed requirements such that a custom proposal can be subsequently prepared. While Unisys has an inventory of delivery patterns associated with each of these services, the level of effort required for these services can be quite variable depending upon your unique requirements. In some cases, certain of these services (e.g., Enterprise Cloud Strategy, Organizational Change Management Strategy) can prove to be a very pragmatic entry point for a client facing a large and/or especially complex cloud migration/adoption challenge. 
+The Unisys CloudForteTM Accelerate and Transform services fall into the following categories.
+•	Enablement helps agencies to make the cultural shift required by cloud adoption by providing strategy, training and organizational change management services.
+•	Discovery provides a baseline for pursuing and measuring cloud optimization, encompassing application performance, reliability and scale. 
+•	Migration provides a focused and accelerated method for migrating workloads to the AWS cloud that enables clients to measurably decrease time-to-market and increase return-on-investment as quickly as possible.
+•	Security accelerates Authority to Operate (ATO), and provides compliance, advanced monitoring, and advanced identity management services.
+•	Innovation unlocks the full potential of the AWS platform for cloud native IT operations including the use of the AWS big data platform, DevSecOps platform integration, serverless architectures, high-performance computing and more. 
+In developing the CloudForteTM solution, Unisys has drawn upon its significant experience in delivering government cloud solutions and the knowledge gained from that experience. This experience and knowledge, in combination with our relationship with AWS, with who we are an AWS Well-Architected Partner and an AWS Migration Acceleration Partner, has uniquely positioned Unisys to architect CloudForteTM to:
+•	Support the full complement of AWS services and features, effective immediately upon general availability (GA) of those services and features;
+•	Rapidly adopt AWS services at the pace they are released through both standards-based and AWS native integration;
+•	Enable the right balance of fully managed, volume-based and advisory services, thereby enabling our clients to customize their hosting engagement to maximize their utilitarian benefit; and
+•	Effectively combine flexibility and structure through the use of a least-privileged access model that provides development teams with direct access to the AWS management console, Application Program Interface (API), or Command Line Interface (CLI) without compromising the structure, management, and oversight that operations teams require.
+This translates directly into value for our clients at any and all stages of their cloud adoption journeys.
+THE UNISYS CLOUD CENTER OF ENABLEMENT (CCOE)
+At its core, Unisys CloudForteTM is enabled by our Cloud Center of Enablement (CCoE), a broad and deep community that creates, evangelizes, and institutionalizes cloud best practices to serve as an accelerator for Unisys’ AWS adoption and as a delivery engine for our federal customer base as they adopt AWS. 
+With a commitment to achieve AWS certifications for more than 500 Unisys associates, clients and subcontractors by the Summer of 2018, our CCoE serves as the central source of expertise, education, innovation and acceleration related to the cloud knowledge assets illustrated in Figure 2. 
+ 
+Unisys CCoE provides a central source of expertise, education, innovation and acceleration related to cloud knowledge assets
+Our knowledge repository supports our practitioners in providing our TAM community the service levels and supported organizational reachback required to provide the highest level of service to our federal clients. Among the specific benefits that our CCoE provides for our TAMs – and, by extension, for our clients – are the following:
+•	AWS Focused Community – A broad and deep community of Unisys resources that are focused on knowledge assets related to AWS and to emerging cloud computing trends and best practices.
+•	Reference Architectures – A collection of CCoE-verified reference architectures that support general or specific customer use cases.
+•	Automation Templates – A collection of CloudFormation or other automation technology templates that are available for community and client use.
+•	Compliance Templates - A collection of CloudFormation or other automation technology templates that have been verified by Unisys to adhere to compliance standards and that are available for community and client use.
+•	Policy Library – A collection of Identity and Access Management (IAM) policies, with supporting documentation, that are available for community and client use.
+•	Services Expertise – Service use cases, feedback and presentations provided by our AWS partner or Unisys CCoE members that can facilitate the expedited understanding and use of AWS services.
+•	Authority to Operate (ATO) and Authorization and Accreditation (A&A) Reference Artifacts – ATO and A&A artifacts that have been cleansed and approved for sharing that can help clients expedite their approval or accreditation efforts.
+•	Certified Resources – All contributing members of our CCoE will be certified AWS resources at an associate’s level or above.
+•	Services Training – Best-practice based AWS services training packages that are developed in anticipation of community demand, or per usage-driven demand.
+•	TAM Community – Privileged access for Unisys AWS TAMs to CCoE knowledge assets that enable best-in-class support for our clients.
+•	Infrastructure as Code – Templates and scripts that enable and enforce Unisys’ “automation first” cloud policy.
+•	Hybrid Integration Patterns – A collection of automation templates and process documents that define and support best-practice Hybrid Cloud integration patterns.
+•	AWS Engagement Partner – Unisys’ Advanced Consulting Partnership with AWS that provides our CCoE with access to our dedicated AWS Partner Solutions Architect.
+In addition to being an AWS Well-Architected Partner and an AWS Migration Acceleration Partner, Unisys is also an AWS Advanced Consulting partner, an AWS Channel Reseller, a member of the AWS Government Partner Program, and an achiever of the AWS Government competency. The strength of our partnership and expertise with AWS, in combination with our CloudForteTM solution enabled and supported by our Cloud Center of Enablement, and our knowledge and experience related to government cloud solutions, uniquely positions Unisys to support our clients at any and all stages of their cloud adoption journeys.
+UNISYS CLOUDFORTETM   CLOUD MIGRATION SERVICES (OVERVIEW)
+Note: For a snapshot of our migration offering, please refer to the CloudForte TM   Migration QuickPage.
+Customer’s cloud migration program requirements are addressed in the CloudForteTM approach. The exhibit below illustrates customer’s accelerated journey to the cloud, and highlights many of the critical services that are required as part of this journey. 
+ 
+Accelerating Customer’s Journey to the Cloud. As a trusted advisor, Unisys stands ready to deliver the critical services required to execute a successful cloud migration/adoption program.
+
+As a trusted advisor, Unisys stands ready to deliver the above services. Included with our migration services are migration readiness assessments, as well as the creation and execution of a tailored, comprehensive and integrated migration plans. This plan will address not only the applications, but also all related and interdependent data and infrastructure that must be migrated, as well as all operational processes that will also change. 
+Organizational Change Management (OCM) is also an integral part of our migration offering and is a critical success factor for the planning and execution of a successful cloud migration/adoption initiatives. OCM addresses the operational impacts of the future-state cloud model, including those related to policies and processes such as such as monitoring and measurement, security and compliance, cloud acquisition models, and training and re-skilling. The overall plan will include the migration schedule and budget, a communications plan, a training plan, and all identified program risks along with their associated mitigation strategies. 
+In executing cloud migrations, Unisys designs and deploys a DevSecOps CI/CD (Continuous Integration/Continuous Delivery) pipeline that is highly automated, and that enables the early and continuous delivery of valuable mission-enabling software that is usable and of high quality. The figure below depicts this pipeline, along with many of the tools (several of which are Open Source) that enable it. Some subset of these tools will likely be used to support customers’ cloud migration initiatives. The choice of specific tools for customer initiatives will be driven by many different factors, including the consideration of tools that are already deployed and used, standards and architecture, the unique requirements for migration, etc. These decisions will be made collaboratively by Unisys and the customer early upon engagement in the cloud migration initiative.
+ 
+Continuous Integration, Delivery and Testing with Common Tools for Java. Unisys will collaborate with customers to determine the tools that are right for the cloud migration initiative.
+
+As mentioned above, the choice of specific products/tools to enable cloud migration initiatives are highly dependent on many different factors that must be defined, understood and prioritized collaboratively by Unisys and the customer. As a result, Unisys recommends that no detailed description of partner-offered maintenance plans and/or price ranges be provided at this time, as these are highly variable, dependent upon customer requirements, and subject to negotiation.
+
+UNISYS CLOUDFORTETM   GENERAL PRICING INFORMATION
+Successful cloud acquisitions separate the purchase of cloud infrastructure from the purchase of related services and labor for assessing, planning, developing, executing, and maintaining cloud migrations and workloads. To contract for cloud infrastructure and services in a manner that accounts for fluctuating demand and the utility-style, pay-for-what-you-use nature of cloud computing, organizations require a contract that enables payment as services are consumed. In order to promote a sufficiently flexible cloud transformation and maximum pricing efficiencies, Unisys recommends that customers consider multiple service lines that include core Infrastructure as a Service (IaaS) capabilities (compute, storage, networking, etc.), as well as additional cloud-related services. 
+This sample model presents, for each major cloud service category, the typical cost drivers for that service category, the type(s) of applicable pricing (e.g., Firm Fixed Price (FFP), Time & Materials (T&M), etc.), and the types of inputs required to derive pricing for that service category. It also denotes the major phases of the Unisys cloud migration/adoption life cycle to which each of the service categories apply. Upon definition / collection of the specific requirements for customer’s cloud migration/adoption initiative, Unisys can this model to provide pricing specific to the initiative. 
+Category	Type	Cost Drivers / Inputs Needed	Discover/ Plan	Migrate	Operate	Maintain / Optimize	Close / Retire
+Program Management Services	FFP	Size of program, # of cloud service vendors under management	X	X	X	X	X
+Professional Services	FFP/T&M	Varies by scope/service	X	X	X	X	X
+Identity and Access Management	FFP	# of applications
+# of users
+types of security levels
+required by application			X	X	
+Productivity Applications	TBD	Need details on number of seats, components to be utilized within the productivity suite, deployment models, support for mobility	X	X	X	X	
+Cloud Computing, Storage, SFTP, Database Hosting, Web Hosting, Dev/Test Hosting	Unit Price	Commodity - Unit pricing based on cloud services required and associated market rates as specified – per CSP pricelist.	X	X	X	X	
+Management Services	FFP	Tiered pricing based on size of environment/#of accounts under management		X	X	X	
+Site Reliability Engineering Support  Agile / DevSecOps	FFP/T&M	Scope of work will determine the contract type (ongoing ‘routine’ maintenance, releases and basic enhancements could be FFP while larger initiatives would likely require T&M contract)			X	X	
+Cloud Operations Center	FFP	Tiered pricing based on size of environment/#of accounts under management			X	X	
+Cloud Brokerage Service	FFP	Tiered pricing based on size of environment/#of accounts under management	X	X	X	X	
+Cybersecurity and Incident Reporting	FFP	Primary drivers are the # of incidents and associated severity to be addressed during the period of performance. Also considered would be the # of annual audits/checks, and any formal analysis/ reporting that is required. Also must consider the extent of integration with existing NOC and SOC organizations, processes and systems			X	X	
+Cloud Service Provider Exit Plan	FFP	Price dependent on size/complexity of account(s) to be moved, as well as services required (e.g. data backup, transfer, archiving, etc.). There would be a standardized process established that the Government could execute when deemed necessary. 					X
+							
+Pricing Model for Cloud Services. The definition / collection of specific requirements for the customer’s migration/adoption initiative will drive pricing.
+Establishing and managing CLINs across multiple CSPs, given the number of services offered, as well as the sub-services that make up each service, can be quite complex. This is made even more difficult to maintain once a contractor has established prices on a given contract, given the frequency with which CSPs can change their service pricing, and thus the underlying pricing model that was used to establish the price lists in the first place.
+Although MSPs might price cloud services differently, the underlying commodity services provided by the CSPs (e.g. compute, network, storage) are for the most part easy to compare.
+The goal of a clear CLIN structure is to make it easy for the Government to compare pricing across MSPs/CSPs, and to make sure that CLINs are easy to understand (so it is clear what the Government is able to buy). It is also important to make sure that the billing and reporting is not a large administrative burden, and that it is tied directly to the underlying services being consumed. In order to accomplish this, CLINs are developed by using a structure that segments each cloud service down to the unique components that comprise it (which may be an aggregation of multiple services that are providing the same service, or a breakdown of the same service by location, for example, where each location may have a different price (e.g., inbound data transfers all have the same price regardless of location, whereas outbound data transfer price varies by location). 
+Based upon our significant knowledge and experience related to government cloud solutions, Unisys will provide Rough Order of Magnitude (ROM) for an initial engagement to conduct a migration readiness assessment and to develop customer’s migration plans and business cases. In order to develop this ROM, Unisys proposes to collaborate with customers in advance of the issue of the solicitation to define and agree to the scope of the application portfolio to be evaluated and migrated.
+UNISYS MSP RELATIONSHIPS
+Unisys has developed strong business partnerships and alliances with AWS, with who we are an AWS Well-Architected Partner and an AWS Migration Acceleration Partner, and Microsoft, with who we are an Azure Gold Level Partner and the 2017 Azure Innovation Partner of the Year.
+In addition, Unisys is an AWS Partner Network (APN) Advanced Consulting Partner with the Government competency, and an Authorized Government Reseller. Unisys has met the technical and sales certifications as part of APN and remains in good standing.
+AWS already has an Authority to Operate (ATO)’s in place with several customer’s Federal Risk and Authorization Management Program (FedRAMP) Low and Moderate workloads in the US East and US West regions, as well as a FedRAMP ATO for High workloads in the AWS GovCloud (US) Region. AWS is a FedRAMP Compliant Cloud Service Provider. AWS offers the following FedRAMP compliant systems that have been granted authorizations, have addressed the FedRAMP security controls (NIST SP 800-53), used the required FedRAMP templates for the security packages posted in the secure FedRAMP Repository, have been assessed by an accredited, independent Third Party Assessment Organization (3PAO), and maintain continuous monitoring requirements of FedRAMP:
+•	AWS GovCloud (US) has been granted a Joint Authorization Board (JAB) Provisional Authority to Operate (P-ATO) for the High impact level. For a list of services included in the authorization, refer to the AWS Services in Scope by Compliance Program page at this link: https://aws.amazon.com/compliance/services-in-scope/
+•	AWS US East-West has been granted multiple Agency ATOs for the Moderate impact level. For a list of services included in the authorization, refer to the AWS Services in Scope by Compliance Program page at this link: https://aws.amazon.com/compliance/services-in-scope/
+Unisys is also a globally recognized Microsoft Partner and an authorized Microsoft Cloud Solution Provider Partner (CSP) in the United States. This authorization permits Unisys to resell Microsoft technology solutions to our customers that include Microsoft Azure O365, Enterprise Mobility Suite, PowerBI, Dynamics 365 and future CSP authorized products. Additionally, each location profiled under the parent membership is recognized with the following active competencies:
+•	Gold Cloud Productivity
+•	Gold Collaboration and Content
+•	Gold Customer Relationship Management
+•	Gold Datacenter
+•	Gold OEM
+•	Gold Software Asset Management
+•	Gold Volume Licensing
+•	Silver Cloud Platform
+•	Silver Data Platform
+•	Silver Windows and Devices
+Having demonstrated superior levels of successful implementations, capabilities and technical certifications, Unisys has met the rigorous requirements for each specified competency. Unisys has reached the status of Gold recognition by exhibiting increased levels of real world experience and expertise through projects that were independently verified by Microsoft, and stands ready to deliver the Microsoft Azure Government solution, which has achieved FedRAMP High Authorization at IL5.
+Unisys is continuously evaluating the cloud market, and pro-actively assessing the emerging capabilities of commercial cloud providers.  If and when a CSP demonstrates viability applicable to the Federal market, we invest in developing a partnership through our Alliances program, and define and execute relevant work streams to foster and deepen the relationship. Much of this activity is enabled by the Unisys Cloud Center of Enablement (CCoE), a broad and deep community that creates, evangelizes, and institutionalizes cloud best practices to serve as an accelerator for Unisys’ CSP adoption and as a delivery engine for our federal customer base as they adopt CSP solutions. At this point, in addition to our maturing partnerships with AWS and Microsoft, Unisys is evaluating Google Cloud Platform (GCP) and Virtustream Federal Cloud as emerging CSPs that may warrant further investment on our part.
+As a Next-Gen MSP, Unisys asserts that service availability is a key measure of a MSPs value to its customers. As such, Unisys automates cloud service availability for our clients beginning with the general availability (GA) announcement and ending – just minutes to hours later - with a fully managed service available to the client. The Unisys process to accomplish this fundamentally incorporates the impacts and considerations related to Billing and Chargeback, Contracts, Service Catalog, Logging and Monitoring, Automated Asset Control & Governance, Access Control, and Continuous Compliance. This process is illustrated below.
+
+
+
+ 
+Unisys Provides Same-Day Service Availability for New CSP Services. Comprehensive integrated process will provide customers with improved time-to-mission value, scaled capability to meet demand, and catalyzed innovation capabilities.
+Unisys’ ability and commitment to provide same-day service availability will provide many benefits for customers, including:
+
+•	Improved Time-to-Mission Value – This ability leverages the CSP’s pace of innovation and new services reliably, and predictably increases organizational agility without sacrificing enterprise security and awareness.
+•	Rapidly Scaled Capabilities to Meet Demand – CSP services are optimized for scalability. Development teams with maximum flexibility of choice can deploy cloud native solutions that scale with demand.
+•	Catalyzed Innovation – Teams with access to the full complement of CSP cloud services are equipped with the tools to rapidly iterate on enhancements and new and innovative capabilities.
+Unisys will make available immediately upon engagement all services provided by the chosen CSP which are Generally Available (GA) at the time of engagement. Unisys keeps abreast of the latest developments related to new CSP services and features, and executes a comprehensive and integrated process to automate cloud service availability for our clients beginning with the GA announcement and ending—just minutes to hours later—with a fully managed service available to the client.
+For information regarding which specific AWS Cloud services are currently approved for each IL, please visit the AWS Services in Scope by Compliance Program webpage at this link: https://aws.amazon.com/compliance/services-in-scope/.  All AWS service offerings are commercially available off the shelf items, or COTS, and, as a commercial Infrastructure as a Service (IaaS) provider, AWS provides the same fundamental infrastructure services to all customers.
+Additionally, under NDA, AWS can discuss its compliance roadmap with customers during an in-person meeting.
+Similarly, the Microsoft Azure Government platform includes the services listed below (as of March 1, 2018).
+
+ 
+•	Active Directory
+•	API Management
+•	App Service
+•	Application Gateway
+•	Automation
+•	Azure Monitor
+•	Azure Portal
+•	Azure Resource Manager
+•	Azure Service Manager (RDFE)
+•	Backup
+•	Batch
+•	Cloud Services
+•	Compute Resource Provider
+•	Event Hubs 
+•	ExpressRoute
+•	Functions
+•	HDInsight
+•	Intune
+•	Key Vault
+•	Load Balancer
+•	Log Analytics
+•	Media Services
+•	Mobile Apps
+•	Network Resource Provider
+•	Notification Hubs
+•	Power BI
+•	Redis Cache
+•	Scheduler
+•	Service Bus 
+•	Service Fabric
+•	Site Recovery
+•	SQL Data Warehouse
+•	SQL Database
+•	SQL Server Stretch Database
+•	Storage
+•	Storage Resource Provider (SRP)
+•	StorSimple
+•	Traffic Manager
+•	Virtual Machine Scale Sets
+•	Virtual Machines
+•	Virtual Network
+•	VPN Gateway
+•	Workflow 
+The Microsoft Azure Government solution has achieved FedRAMP High Authorization at IL5. As Microsoft adds and certifies new capabilities and services to its Azure Government platform on a continuous basis, the following site provides a good source for the latest related information: https://azure.microsoft.com/en-us/global-infrastructure/services/
+Unisys keeps abreast of the latest developments related to new CSP services and features, and executes a comprehensive and integrated process to automate cloud service availability for our clients beginning with the general availability (GA) announcement and ending – just minutes to hours later - with a fully managed service available to the client.
+
+
+`
